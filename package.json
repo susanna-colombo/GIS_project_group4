@@ -1,0 +1,26 @@
+{
+  "name": "gis_project_group4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "vite --base=./",
+    "build-production": "vite build --base=/polimi-webgis-class-2026/",
+    "build-local": "vite build",
+    "preview": "vite preview --base=./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bootstrap": "5.3.3",
+    "glob": "10.3.10",
+    "ol": "8.2.0",
+    "ol-layerswitcher": "4.1.1"
+  },
+  "devDependencies": {
+    "vite": "6.3.4"
+  }
+}
