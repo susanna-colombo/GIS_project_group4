@@ -3,8 +3,8 @@
 
 
 /* SUSANNA  */
-/* Small header (for pages that are not home) */
 
+/* Small header (for pages that are not home) */
 #header.small {
 		position: relative;
 		margin: 0;
@@ -15,6 +15,129 @@
 		padding: 0.5em 0 0.5em 0;
 		text-align: center;
 		color: black;
+}
+
+/* Map */
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+	height: 650px;
+	width: 100%;
+}
+
+/* Mouse Pointer */
+.custom-control {
+	font-size: medium;
+	height: 40px;
+	color: white;
+    bottom: 30px;
+    position: absolute;
+    right: 15px;
+    background: #E35336;
+    border: 3px solid #FDBCB4;
+    padding: 10px;
+	border-radius: 15px;
+	display: flex;           /* turn box into Flex Box */
+    justify-content: center; /* horizontal alignment*/
+    align-items: center;     /* vertical alignment */
+
+}
+
+/* Popup */
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 280px;
+}
+
+.ol-popup:after,
+.ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+}
+
+.ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+}
+
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+}
+
+.ol-popup-closer:after {}
+
+/* Legend */
+.legend-container{
+    position: absolute;
+    /* z-index: 9999; */
+    background-color: white;
+    left: 10px;
+    bottom: 40px;
+    width: 300px;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.legend-content ul{
+    list-style: none;
+	font-size: 11pt;
+	line-height: 17pt;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.legend-title{
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    display: block;
+	color: #9E3A26;
+}
+
+/* Show checkboxes and radio buttons in layer switcher */
+.layer-switcher input {
+    display: inline-block !important;
+    appearance: auto !important;
+}
+
+/* Scale line */
+.ol-scale-line-inner{
+	font-size: 14px !important;
+	font-weight: bold;
+    background: white;
+    color: black;
 }
 
 /* SARA  */
