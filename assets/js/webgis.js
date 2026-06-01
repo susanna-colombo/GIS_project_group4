@@ -29,7 +29,7 @@ let osm = new Tile({
 
 // Croatia NO2 AMAC map 2021-2023
 let Croatia_no2_AMAC_2021_2023 = new Image({
-	type: 
+	// type: 
     title: "NO2 AMAC map (2021-2023)",
     /* type not specified allows for multiple selection*/
     source: new ImageWMS({
