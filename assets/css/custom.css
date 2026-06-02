@@ -23,11 +23,6 @@
   width: 100%;
 }
 
-.container {
-	height: 650px;
-	width: 100%;
-}
-
 /* Mouse Pointer */
 .custom-control {
 	font-size: medium;
@@ -141,6 +136,143 @@
 }
 
 /* SARA  */
+.source-code-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
 
+/* ── Accordion ─────────────────────────────────── */
+.workflow-accordion {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+    background: #fff;
+}
+
+.workflow-intro {
+    padding: 3rem 0 2.5rem;
+}
+
+.workflow-intro h2 {
+    font-size: 1.9rem;
+    margin-bottom: 0.75rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.workflow-intro p {
+    /* eredita font/size/color dal body (Roboto 17pt #888) */
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.accordion-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #e6e6e6;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e6e6e6;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ── Header button ─────────────────────────────── */
+.accordion-trigger {
+    width: 100%;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0.5rem;
+    text-align: left;
+    transition: background 0.2s;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 17pt;
+    color: #888;
+}
+
+.accordion-trigger:hover {
+    background: #f7f7f7;
+}
+
+.step-badge {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ae8894;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-title {
+    flex: 1;
+    font-size: 17pt;
+    font-weight: 300;
+    color: #666;
+    letter-spacing: 0.01em;
+}
+
+.accordion-arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    color: #aaa;
+}
+
+.accordion-arrow svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.accordion-item.is-open .accordion-arrow {
+    transform: rotate(90deg);
+    color: #4a7c59;
+}
+
+.accordion-item.is-open .step-title {
+    color: #4a7c59;
+}
+
+/* ── Content panel ─────────────────────────────── */
+.accordion-panel {
+    width: 1200px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 auto;
+}
+
+.accordion-item.is-open .accordion-panel {
+    max-height: 1200px;
+    padding-bottom: 1.75rem;
+}
+
+/* Il testo eredita tutto dal body: Roboto 300, 17pt, #888, justify */
 
 /* CLARA  */

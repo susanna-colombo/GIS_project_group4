@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Tessellate by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Workflow</title>
@@ -15,390 +10,226 @@
 	<body class="is-preload">
 
 		<!-- Header -->
-			<section id="header" class="dark">
-				<header>
+			<section id="header" class="dark workflow-hd">
+
+				<header style="width:100%; text-align:center;">
 					<h1>Workflow</h1>
-					<p>Workflow description</a></p>
+					<p>Workflow description</p>
+
+					<nav id="nav" style="text-align:center; margin-top:30px;">
+						<a href="/index.html" style="color:white; margin:0 20px;">HOME</a>
+						<span style="color:white;"> | </span>
+						<a href="/pages/results.html" style="color:white; margin:0 20px;">Results</a>
+						<span style="color:white;"> | </span>
+						<a href="/pages/webgis.html" style="color:white; margin:0 20px;">WebGIS</a>
+					</nav>
 				</header>
-				<footer>
-					<a href="#first" class="button scrolly">Proceed to second phase</a>
-				</footer>
+
 			</section>
 
-		<!-- First -->
+		
+			<!-- First -->
 			<section id="first" class="main">
 				<header>
 					<div class="container">
-						<h2>Tessellate is a free responsive site template</h2>
-						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
-						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
-					</div>
-				</header>
-				<div class="content dark style1 featured">
-					<div class="container">
-						<div class="row">
-							<div class="col-4 col-12-narrow">
-								<section>
-									<span class="feature-icon"><span class="icon fa-clock"></span></span>
-									<header>
-										<h3>Gravida</h3>
-									</header>
-									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-									accumsan vivamus.</p>
-								</section>
+						<h2>Our Methodology</h2>
+						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+    
+						<!-- testo sinistra -->
+							<div>
+								<p style="text-align: left;">This project follows a multi-source geospatial workflow, integrating 
+									atmospheric, land cover, and demographic data to investigate how environmental changes relate to air quality and 
+									human exposure in Croatia. All data are freely available through open platforms, and processing was carried out using 
+									standard GIS techniques in QGIS.</p>
+								<p style="text-align: left; margin-bottom: 25px;">
+									The analysis is structured in four main steps: acquiring and processing air pollution data from CAMS, mapping land 
+									cover transitions using the ESRI Annual Land Cover dataset, overlaying population distribution data, and finally 
+									combining all layers to identify spatial patterns and exposure hotspots.</p>
 							</div>
-							<div class="col-4 col-12-narrow">
-								<section>
-									<span class="feature-icon"><span class="icon solid fa-bolt"></span></span>
-									<header>
-										<h3>Vivamus</h3>
-									</header>
-									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-									accumsan vivamus.</p>
-								</section>
-							</div>
-							<div class="col-4 col-12-narrow">
-								<section>
-									<span class="feature-icon"><span class="icon solid fa-cloud"></span></span>
-									<header>
-										<h3>Accumsan</h3>
-									</header>
-									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-									accumsan vivamus.</p>
-								</section>
-							</div>
-							<div class="col-12">
-								<footer>
-									<a href="#second" class="button scrolly">Gravida tempor lacinia</a>
-								</footer>
+
+						<!-- card destra -->
+							<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 5rem;">
+
+								<div style="background: #f4f4f4; border-radius: 10px; padding: 1rem 1.25rem; border: 0.5px solid #ddd; display: flex; gap: 12px; align-items: flex-start;">
+									<i class="ti ti-map-2" style="font-size: 20px; color:  #0F6E56; flex-shrink: 0; margin-top: 2px;" aria-hidden="true"></i>
+									<div>
+										<div style="font-size: 11px; color: #888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px; text-align: center">Study area</div>
+										<div style="font-size: 14px; font-weight: 500; color: #222; line-height: 1.4;">Croatia — national scale with regional breakdown</div>
+									</div>
+								</div>
+
+								<div style="background: #f4f4f4; border-radius: 10px; padding: 1rem 1.25rem; border: 0.5px solid #ddd; display: flex; gap: 12px; align-items: flex-start;">
+									<i class="ti ti-calendar" style="font-size: 20px; color:  #0F6E56; flex-shrink: 0; margin-top: 2px;" aria-hidden="true"></i>
+									<div>
+										<div style="font-size: 11px; color: #888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px;">Time period</div>
+										<div style="font-size: 14px; font-weight: 500; color: #222; line-height: 1.4;">2021 – 2023 land cover transitions correlated with pollutant trends</div>
+									</div>
+								</div>
+
+								<div style="background: #f4f4f4; border-radius: 10px; padding: 1rem 1.25rem; border: 0.5px solid #ddd; display: flex; gap: 12px; align-items: flex-start;">
+									<i class="ti ti-users" style="font-size: 20px; color:  #0F6E56; flex-shrink: 0; margin-top: 2px;" aria-hidden="true"></i>
+									<div>
+										<div style="font-size: 11px; color: #888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px;">Population exposure</div>
+										<div style="font-size: 14px; font-weight: 500; color: #222; line-height: 1.4;">2023 population counts overlaid with multi-temporal pollution hotspots</div>
+									</div>
+								</div>
+
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
 
-		<!-- Second -->
-			<section id="second" class="main">
-				<header>
-					<div class="container">
-						<h2>Euismod sed feugiat lorem tempus magna</h2>
-						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
-						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
-					</div>
-				</header>
-				<div class="content dark style2">
-					<div class="container">
-						<div class="row">
-							<div class="col-4 col-12-narrow">
-								<section>
-									<h3>Augue vivamus sed ipsum commodo lorem dolor</h3>
-									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales. Diam
-									tempor dui lacinia eget ornare varius gravida. Gravida dis placerat lectus ante
-									vel nunc euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus
-									augue cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
-									lorem ipsum dolor placerat magna tempus feugiat.</p>
-									<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-									accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida dolore
-									euismod lorem ipsum dolor.</p>
-									<footer>
-										<a href="#third" class="button scrolly">Accumsan nisi tempor</a>
-									</footer>
-								</section>
-							</div>
-							<div class="col-8 col-12-narrow">
-								<div class="row">
-									<div class="col-6"><a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a></div>
-									<div class="col-6"><a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a></div>
-									<div class="col-6"><a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a></div>
-									<div class="col-6"><a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a></div>
-									<div class="col-6"><a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a></div>
-									<div class="col-6"><a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+					<!-- List -->
+					<ul class="accordion-list">
 
-		<!-- Third -->
-			<section id="third" class="main">
-				<header>
-					<div class="container">
-						<h2>Ornare varius lorem ipsum ante lectus</h2>
-						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
-						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
-					</div>
-				</header>
-				<div class="content dark style3">
-					<div class="container">
-						<span class="image featured"><img src="images/pic07.jpg" alt="" /></span>
-						<div class="row">
-							<div class="col-4 col-12-narrow">
-								<h3>Diam vivamus turpis lorem sodales lectus ornare</h3>
-								<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales. Diam
-								tempor dui lacinia eget ornare varius gravida. Gravida dis placerat lectus ante
-								vel nunc euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus
-								augue cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
-								lorem ipsum dolor placerat magna tempus feugiat.</p>
-								<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-								accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida dolore
-								euismod lorem ipsum dolor sit amet consequat. vivamus nisi eu eget ornare varius
-								gravida dolore euismod lorem ipsum dolor sit amet consequat. vivamus nisi eu
-								eget ornare et magna.</p>
-							</div>
-							<div class="col-4 col-12-narrow">
-								<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales. Diam
-								tempor dui lacinia eget ornare varius gravida. Gravida dis placerat lectus ante
-								vel nunc euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus
-								augue cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
-								lorem ipsum dolor placerat magna tempus feugiat.</p>
-								<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-								accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida dolore
-								euismod lorem ipsum dolor sit amet consequat eget ornare varius gravida euismod.
-								Gravida dis lorem ipsum dolor placerat magna tempus feugiat magna tempus lorem.</p>
-								<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-								accumsan vivamus augue cubilia.</p>
-							</div>
-							<div class="col-4 col-12-narrow">
-								<p>Placerat lectus ante vel nunc euismod est turpis sodales. Diam tempor dui
-								lacinia eget ornare varius gravida. Gravida dis placerat lectus ante vel nunc
-								euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus augue
-								cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
-								lorem ipsum dolor placerat magna tempus feugiat. Lectus ante vel nunc euismod
-								est turpis sodales. Diam tempor dui lacinia dolore.</p>
-								<p>Accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida
-								dolore euismod lorem ipsum dolor sit amet conseismod lorem ipsum dolor sit amet
-								consequat lorem ipsum consequat feugiat sed tempus euismod feugiat veroeros.</p>
-								<footer>
-									<a href="#fourth" class="button scrolly">Ipsum ornare lorem dolor</a>
-								</footer>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+						<!-- First: pollution data -->
+						<li class="accordion-item">
+							<button class="accordion-trigger" aria-expanded="false">
+								<span class="accordion-arrow">
+									<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+								</span>
+								<span class="step-badge">1</span>
+								<span class="step-title">Pollution Data</span>
+							</button>
+							<div class="accordion-panel">
+								<p style="text-align: left;">
+									The core objective of this section is to anlayze the evolution of concentration of NO₂, PM2.5 and PM10,
+									in the years 2021 and 2023. The data used coes from <strong>CAMS European Air Quality Reanalysis</strong> 
+									(Copernicus Atmosphere Monitoring Service), a high-resolution dataset (~10 km) built on an ensemble of eleven 
+									air quality assimilation models across Europe. The website provides hourly concentration values for
+									multiple pollutants, with a temporal coverage from 2013 to 2025.
+								</p>
 
-		<!-- Basic Elements -->
-		<!--
-			<section class="main">
-				<header>
-					<div class="container">
-						<h2>A Whole Lotta Elements</h2>
-						<p>General purpose elements for every general purpose. Or something like that.</p>
-					</div>
-				</header>
-				<div class="content style1 dark">
-					<div class="container">
-						<section>
-							<header>
-								<h3>Paragraph</h3>
-								<p>This is a byline</p>
-							</header>
-							<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
-							habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
-							leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
-							amet risus elit.</p>
-						</section>
-						<section>
-							<header>
-								<h3>Blockquote</h3>
-							</header>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
-							tempus euismod. Vestibulum ante ipsum primis in faucibus. Cras sit amet urna eros, id egestas
-							tempus ante ipsum primis in faucibus orci luctus et ultrices.</blockquote>
-						</section>
-						<section>
-							<header>
-								<h3>Divider</h3>
-							</header>
-							<p>Donec consectetur <a href="#">vestibulum dolor et pulvinar</a>. Etiam vel felis enim, at viverra
-							ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-							facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-							tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-							posuere cubilia.</p>
-							<hr />
-							<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-							ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-							facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-							tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-							posuere cubilia.</p>
-						</section>
-						<section>
-							<header>
-								<h3>Unordered List</h3>
-							</header>
-							<ul class="default">
-								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
-								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
-								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
-								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
-							</ul>
-						</section>
-						<section>
-							<header>
-								<h3>Ordered List</h3>
-							</header>
-							<ol class="default">
-								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
-								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
-								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
-								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
-							</ol>
-						</section>
-						<section>
-							<header>
-								<h3>Table</h3>
-							</header>
-							<div class="table-wrapper">
-								<table class="default">
-									<thead>
-										<tr>
-											<th>ID</th>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>00001</td>
-											<td>Lorem ipsum dolor</td>
-											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>00002</td>
-											<td>Sit amet nullam</td>
-											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>00003</td>
-											<td>Feugiat felis viverra</td>
-											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>00004</td>
-											<td>Sagittis enim felis</td>
-											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>00005</td>
-											<td>Nullam sed vestibulum</td>
-											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-											<td>19.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="3"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
-						<section>
-							<header>
-								<h3>Form</h3>
-							</header>
-							<form method="post" action="#">
-								<div class="row gtr-50">
-									<div class="col-6 col-12-narrow">
-										<input type="text" name="name" id="name" value="" placeholder="John Doe" />
-									</div>
-									<div class="col-6 col-12-narrow">
-										<input type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
-									</div>
-									<div class="col-12">
-										<div class="select" tabindex="-1">
-											<select name="department" id="department">
-												<option value="">Choose a department</option>
-												<option value="1">Manufacturing</option>
-												<option value="2">Administration</option>
-												<option value="3">Support</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-12">
-										<input type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Enter your message"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" class="button" value="Send Message" /></li>
-											<li><input type="reset" class="button alt" value="Clear Form" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
-					</div>
-				</div>
-			</section>
-		-->
+								<p style="text-align: left;">
+									<strong>Data Sources</strong><br>
+									Two types of CAMS data were used: <strong>hourly data for December 2023</strong>, downloaded as raw NetCDF 
+									files directly from the CAMS portal using validated reanalysis and ensemble median values; and <strong>monthly 
+									aggregated GeoTIFFs</strong>, covering all 12 months of 2021 and the remaining 11 months of 2023 for the 
+									three pollutants, provided by the course professors.
+								</p>
 
-		<!-- Fourth -->
-			<section id="fourth" class="main">
-				<header>
-					<div class="container">
-						<h2>Sed feugiat ipsum consequat</h2>
-						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
-						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
-					</div>
-				</header>
-				<div class="content style4 featured">
-					<div class="container medium">
-						<form method="post" action="#">
-							<div class="row gtr-50">
-								<div class="col-6 col-12-mobile"><input type="text" placeholder="Name" /></div>
-								<div class="col-6 col-12-mobile"><input type="text" placeholder="Email" /></div>
-								<div class="col-12"><textarea name="message" placeholder="Message"></textarea></div>
-								<div class="col-12">
-									<ul class="actions special">
-										<li><input type="submit" class="button" value="Send Message" /></li>
-										<li><input type="reset" class="button alt" value="Clear Form" /></li>
-									</ul>
-								</div>
+								<p style="text-align: left;"><strong>Processing Steps</strong></p>
+								<ol style="text-align: left;">
+									<li><strong>Aggregating hourly data for December 2023 —</strong> The hourly data was temporally averaged 
+										across the full month to produce a single monthly mean raster per pollutant, then exported as GeoTIFF.</li>
+									<li><strong>Clipping to the area of interest —</strong> All monthly layers were clipped to the Croatian 
+										national boundary. A pixel misalignment was detected between the December 2023 raster and the other
+										provided layers and resolved by realigning all rasters onto a common grid before clipping.</li>
+									<li><strong>Yearly aggregation and concentration classification —</strong> The 12 monthly rasters for each 
+										year were averaged to produce annual mean maps for 2021 and 2023, then reclassified into five concentration
+										 classes following EU air quality limit values.</li>
+									<li><strong>Spatiotemporal trend analysis (2021–2023) —</strong> A difference map was computed for each 
+										pollutant (2023 − 2021) to visualise how concentrations evolved over the period, highlighting areas 
+										of improvement and zones where pollution increased.</li>
+								</ol>
 							</div>
-						</form>
-					</div>
-				</div>
+						</li>
+
+						<!-- Second: land use data -->
+						<li class="accordion-item">
+							<button class="accordion-trigger" aria-expanded="false">
+								<span class="accordion-arrow">
+									<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+								</span>
+								<span class="step-badge">2</span>
+								<span class="step-title">Land Use Data</span>
+							</button>
+							<div class="accordion-panel">
+								<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.
+							    	Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
+							</div>
+						</li>
+
+						<!-- Third -->
+						<li class="accordion-item">
+							<button class="accordion-trigger" aria-expanded="false">
+								<span class="accordion-arrow">
+									<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+								</span>
+								<span class="step-badge">3</span>
+								<span class="step-title">Population Data</span>
+							</button>
+							<div class="accordion-panel">
+								<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.
+								Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
+							</div>
+						</li>
+
+						<!-- Fourth -->
+						<li class="accordion-item">
+							<button class="accordion-trigger" aria-expanded="false">
+								<span class="accordion-arrow">
+									<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+								</span>
+								<span class="step-badge">4</span>
+								<span class="step-title">Everything Together</span>
+							</button>
+							<div class="accordion-panel">
+								<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.
+								Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
+							</div>
+						</li>
+
+					</ul>
+
+				</header>
 			</section>
+		
+
 
 		<!-- Footer -->
-			<section id="footer">
+			<div id="footer" class="content dark style3">
+				<div class="source-code-container">
+				<h2 class="source-code-title">
+					See here our source code:
+				</h2>
+				
 				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li>
+						<a href="https://github.com/susanna-colombo/GIS_project_group4" class="icon brands fa-github" target="_blank">
+							<span class="label">GitHub</span>
+						</a>
+					</li>
 				</ul>
+			</div>
+
 				<div class="copyright">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Untitled. All rights reserved.</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
-			</section>
+			</div>
+
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.scrolly.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+
+		<!-- Script for the accordion -->
+		<script>
+			document.querySelectorAll('.accordion-trigger').forEach(function(btn) {
+				btn.addEventListener('click', function() {
+					var item = this.closest('.accordion-item');
+					var isOpen = item.classList.contains('is-open');
+
+					// Close all
+					document.querySelectorAll('.accordion-item.is-open').forEach(function(el) {
+						el.classList.remove('is-open');
+						el.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+					});
+
+					// Open clicked one (if it was closed)
+					if (!isOpen) {
+						item.classList.add('is-open');
+						btn.setAttribute('aria-expanded', 'true');
+					}
+				});
+			});
+		</script>
 
 	</body>
 </html>
