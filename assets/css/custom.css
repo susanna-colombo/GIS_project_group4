@@ -342,11 +342,11 @@
 
 .accordion-item.is-open .accordion-arrow {
     transform: rotate(90deg);
-    color: #4a7c59;
+    color: #af6a7c;
 }
 
 .accordion-item.is-open .step-title {
-    color: #4a7c59;
+    color: #af6a7c;
 }
 
 /* ── Content panel ─────────────────────────────── */
