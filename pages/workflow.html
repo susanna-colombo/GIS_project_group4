@@ -31,10 +31,12 @@
 		<section id="first" class="main">
 			<header>
 				<div class="container">
+
+					<!-- Title -->
 					<h2>Our Methodology</h2>
 					<div style="display: grid; grid-template-columns: 4fr 2fr; gap: 2rem; align-items: start; margin-bottom: 1.5rem;">
 
-					<!-- testo sinistra -->
+					<!-- Left: text -->
 						<div>
 							<p style="text-align: left;">This project follows a multi-source geospatial workflow, integrating 
 								atmospheric, land cover, and demographic data to investigate how environmental changes relate to air quality and 
@@ -46,7 +48,7 @@
 								combining all layers to identify spatial patterns and exposure hotspots.</p>
 						</div>
 
-					<!-- card destra -->
+					<!-- Right: feature cards -->
 						<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 2rem;">
 							<div class="feature-card">
 								<p class="feature-card-title">Study area</p>
@@ -100,15 +102,20 @@
 							<div style="margin-top: 1.5rem; text-align: center;">
 								<img src="../images/pollutant_map_europe.png"
 									alt="Pollutant map of Europe"
-									style="max-width: 60%; border-radius: 8px;" />
+									style="max-width: 60%; cursor: zoom-in;"
+									onclick="document.getElementById('lightbox-pollutant').classList.add('active')" />
 								<p style="margin-top: 0.1rem; font-size: 0.85rem; color: #999; font-style: italic; letter-spacing: 0.02em;">
-									Fig. 1 — CAMS Monthly mean concentration of PM2.5 for the month 04 - 2021. 
+									Fig. 1 — CAMS Monthly mean concentration of PM2.5 for the month 04 - 2021.
 								</p>
+							</div>
+
+							<div id="lightbox-pollutant" class="lightbox-overlay" onclick="this.classList.remove('active')">
+								<img src="../images/pollutant_map_europe.png" alt="Pollutant map of Europe">
 							</div>
 
 							<p style="text-align: left; margin-top: 1rem;"><strong>Processing Steps</strong></p>
 							<ol style="text-align: left;">
-								<li><strong>Aggregating hourly data for December 2023 —</strong> The hourly data was temporally averaged 
+								<li><strong>Aggregating hourly data for December 2023 —</strong> The hourly data for December 2023 was temporally averaged 
 									across the full month to produce a single monthly mean raster per pollutant, then exported as GeoTIFF.</li>
 								<li><strong>Clipping to the area of interest —</strong> All monthly layers were clipped to the Croatian 
 									national boundary. A pixel misalignment was detected between the December 2023 raster and the other
@@ -121,6 +128,46 @@
 									of improvement and zones where pollution increased.</li>
 							</ol>
 
+							<p style="text-align: left; margin-top: 1rem;"><strong>Results</strong></p>
+							<p style="text-align: left; margin-top: 0rem;">
+								The following output files are produced for each pollutant (NO₂, PM2.5, PM10).
+							</p>
+							<table class="results-table">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>File</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td><code>croatia_CAMS_&lt;pollutant&gt;_2023_12.tif</code></td>
+										<td>Monthly mean concentration raster for December 2023, clipped to Croatia</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td><code>croatia_average_&lt;pollutant&gt;_2023.tif</code></td>
+										<td>Annual mean raster computed by averaging the 12 monthly layers for 2023</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td><code>croatia_&lt;pollutant&gt;_concentration_map_2023.tif</code></td>
+										<td>Annual mean reclassified into 5 concentration classes following EU air quality limit values</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td><code>croatia_&lt;pollutant&gt;_2021_2023_AMAC_map.tif</code></td>
+										<td>Difference raster (2023 − 2021) showing spatiotemporal change in concentration</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td><code>croatia_&lt;pollutant&gt;_2021_2023_AMAC_map.qml</code></td>
+										<td>QGIS style file for the AMAC map, defining the diverging colour ramp and class breaks</td>
+									</tr>
+								</tbody>
+							</table>
 
 						</div>
 					</li>
@@ -148,10 +195,20 @@
 							<div style="display: flex; gap: 3rem; margin-top: 1.5rem; justify-content: center;">
 								<img src="../images/land_cover_data_1.png"
 									alt="Land cover data"
-									style="width: 25%; border-radius: 10px;" />
+									style="width: 25%; cursor: zoom-in;"
+									onclick="document.getElementById('lightbox-landcover-1').classList.add('active')" />
 								<img src="../images/land_cover_data_2.png"
 									alt="Land cover change"
-									style="width: 25%; border-radius: 10px;" />
+									style="width: 25%; cursor: zoom-in;"
+									onclick="document.getElementById('lightbox-landcover-2').classList.add('active')" />
+							</div>
+
+							<div id="lightbox-landcover-1" class="lightbox-overlay" onclick="this.classList.remove('active')">
+								<img src="../images/land_cover_data_1.png" alt="Land cover data">
+							</div>
+
+							<div id="lightbox-landcover-2" class="lightbox-overlay" onclick="this.classList.remove('active')">
+								<img src="../images/land_cover_data_2.png" alt="Land cover change">
 							</div>
 							<p style="margin-top: 0.1rem; font-size: 0.85rem; color: #999; font-style: italic; letter-spacing: 0.02em;">
 									Fig. 2 — The 2 land cover tiles downloaded from the ESRI Living Atlas, covering the Croatian territory.</p>
@@ -190,6 +247,43 @@
 									and used to compute meaningful statistics. 
 								</li>
 							</ol>
+							
+							<p style="text-align: left; margin-top: 1rem;"><strong>Results</strong></p>
+							<p style="text-align: left; margin-top: 0rem;">The following output files are produced for each pollutant (NO₂, PM2.5, PM10).</p>
+
+							<table class="results-table">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>File</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td><code>croatia_LCC_2021_2023.tif</code></td>
+										<td>Land cover change raster encoding 2021→2023 transitions as unique class codes</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Statistical table</td>
+										<td>Summary statistics of pollutant concentration per land cover change class, implemented directly in the website</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td><code>croatia_&lt;pollutant&gt;_zonal_statistics_2021_2023.gpkg</code></td>
+										<td>Vector layer with zonal statistics (mean, min, max) per administrative zone for each pollutant</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Charts</td>
+										<td>Figures showing pollutant distribution per land cover class, implemented directly in the website</td>
+									</tr>
+								</tbody>
+							</table>
+
+
 						</div>
 					</li>
 
@@ -225,10 +319,20 @@
 							<div style="display: flex; gap: 3rem; margin-top: 1.5rem; justify-content: center;">
 								<img src="../images/population_data.png"
 									alt="Population data"
-									style="width: 40%; border-radius: 10px;" />
+									style="width: 40%; cursor: zoom-in;"
+									onclick="document.getElementById('lightbox-population').classList.add('active')" />
 								<img src="../images/GAUL_Croatia.png"
 									alt="Administrative boundaries"
-									style="width: 40%; border-radius: 10px;" />
+									style="width: 40%; cursor: zoom-in;"
+									onclick="document.getElementById('lightbox-gaul').classList.add('active')" />
+							</div>
+
+							<div id="lightbox-population" class="lightbox-overlay" onclick="this.classList.remove('active')">
+								<img src="../images/population_data.png" alt="Population data">
+							</div>
+
+							<div id="lightbox-gaul" class="lightbox-overlay" onclick="this.classList.remove('active')">
+								<img src="../images/GAUL_Croatia.png" alt="Administrative boundaries">
 							</div>
 							<p style="margin-top: 0.1rem; font-size: 0.85rem; color: #999; font-style: italic; letter-spacing: 0.02em;">
 								Fig. 3 — Distribution of Croatia population in 2023 from WorldPop.                    
@@ -278,6 +382,42 @@
 									of the Croatian population exposed to each pollution concentration level.
 								</li>
 							</ol>
+
+							<p style="text-align: left; margin-top: 1rem;"><strong>Results</strong></p>
+							<p style="text-align: left; margin-top: 0rem;">The following output files are produced for each pollutant (NO₂, PM2.5, PM10).</p>
+							<table class="results-table">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>File</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td><code>croatia_&lt;pollutant&gt;_2023_bivariate.gpkg</code></td>
+										<td class="table-line">Vector layer with zonal statistics containing population class (median), pollution class (max) and bivariate classification attributes per administrative zone</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Bivariate map & legend</td>
+										<td class="table-line">Interactive bivariate map showing the spatial relationship between population density and pollution levels, implemented directly in the website</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td><code>croatia_&lt;pollutant&gt;_2023_chart.gpkg</code></td>
+										<td class="table-line">Dissolved vector layer (max 5 features) with population sum and pollution class per zone, used as input for the pie chart</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Pie chart</td>
+										<td class="table-line">Chart showing the percentage of Croatian population exposed to each pollution concentration level, implemented directly in the website</td>
+									</tr>
+								</tbody>
+							</table>
+
+
 						</div>
 					</li>
 
