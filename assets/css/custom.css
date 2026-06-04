@@ -276,3 +276,43 @@
 /* Il testo eredita tutto dal body: Roboto 300, 17pt, #888, justify */
 
 /* CLARA  */
+
+/* 1. Structure générale du tableau (Lignes intérieures et extérieures) */
+table {
+    border-collapse: collapse; /* Fusionne les bordures pour éviter l'effet "double ligne" */
+    width: 100%;
+}
+
+table th, table td {
+    border: 1px solid #bdc3c7; /* Lignes grises pour former les cases */
+    padding: 12px 15px;        /* Espace intérieur pour aérer les cellules */
+    vertical-align: top;       /* Aligne le contenu vers le haut */
+}
+
+/* 2. Titres en petites capitales et en gras */
+table th {
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    background-color: #f8f9fa; /* Léger fond gris pour détacher l'en-tête (optionnel) */
+}
+
+/* 3. Style des listes avec puces rondes devant le texte */
+table ul {
+    list-style-type: disc;     /* Active les puces rondes */
+    list-style-position: inside; /* Place les puces à l'intérieur de la cellule */
+    margin: 0;
+    padding-left: 18px;        /* Décale la liste vers la droite pour que les ronds soient dans la case, juste devant le texte */
+}
+
+table ul li {
+    margin-bottom: 6px;        /* Espace entre les lignes de la liste */
+    line-height: 1.4;
+}
+
+/* Centre horizontalement et verticalement les colonnes 1, 2 et 3 */
+table td:nth-child(-n+3) {
+    text-align: center;
+    vertical-align: middle;
+}
