@@ -359,7 +359,7 @@
 }
 
 .accordion-item.is-open .accordion-panel {
-    max-height: 1200px;
+    max-height: 4000px;
     padding-bottom: 1.75rem;
 }
 
@@ -367,42 +367,159 @@
 
 /* CLARA  */
 
-/* 1. Structure générale du tableau (Lignes intérieures et extérieures) */
+.title-centered {
+    text-align: center;
+}
+
+/* Markers from the first list (the one with the three maps) */
+.custom-list li::marker {
+    color: #AE8894;
+    font-weight: bold;
+}
+
+/* ---------------- General tables ----------------*/
+
 table {
-    border-collapse: collapse; /* Fusionne les bordures pour éviter l'effet "double ligne" */
+    border-collapse: collapse; /* Merges borders to avoid the “double line” effect */
     width: 100%;
 }
 
+/* Table headers and cells */
 table th, table td {
-    border: 1px solid #bdc3c7; /* Lignes grises pour former les cases */
-    padding: 12px 15px;        /* Espace intérieur pour aérer les cellules */
-    vertical-align: top;       /* Aligne le contenu vers le haut */
+    border: 1px solid #bdc3c7;
+    padding: 12px 15px;
+    vertical-align: top;
 }
 
-/* 2. Titres en petites capitales et en gras */
+/* Table headers */
 table th {
     font-weight: bold;
     font-variant: small-caps;
     font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 0.5px;
-    background-color: #f8f9fa; /* Léger fond gris pour détacher l'en-tête (optionnel) */
+    background-color: #f8f9fa;
 }
 
-/* 3. Style des listes avec puces rondes devant le texte */
+/* Style for lists with round bullets before the text */
 table ul {
-    list-style-type: disc;     /* Active les puces rondes */
-    list-style-position: inside; /* Place les puces à l'intérieur de la cellule */
+    list-style-type: disc;     /* Turns on round bullets */
+    list-style-position: inside; /* Places the bullets inside the cell */
     margin: 0;
-    padding-left: 18px;        /* Décale la liste vers la droite pour que les ronds soient dans la case, juste devant le texte */
+    padding-left: 18px; /* Shifts the list to the right so that the circles are inside the box, right in front of the text */
 }
 
+/* Styling for list items inside the tables */
 table ul li {
-    margin-bottom: 6px;        /* Espace entre les lignes de la liste */
+    margin-bottom: 6px;
     line-height: 1.4;
 }
 
-/* Centre horizontalement et verticalement les colonnes 1, 2 et 3 */
+/* Centers the text in the first-three columns of all tables */
 table td:nth-child(-n+3) {
     text-align: center;
     vertical-align: middle;
+}
+
+
+/* ---------------- Concentration level table ----------------*/
+.conc-table {
+    font-family: 'Roboto', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* First line of the table */
+.conc-table thead th {
+    font-variant: small-caps;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #f8f9fa;
+    color: #333333;
+    padding: 12px;
+    border-bottom: 2px solid #cbd5e1;
+    text-align: center;
+}
+
+/* Content of the table */
+.conc-table tbody td {
+    padding: 6px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+    color: inherit;
+    font-size: 1.1em;
+}
+
+/* Specific style for the first column */
+.conc-table tbody td:first-child {
+    font-weight: bold;
+    width: 18%;
+}
+
+/* General style for numbered badges */
+.badge {
+    display: inline-block;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.9em;
+}
+
+
+/* ---------------- Zonal statistics table ----------------*/
+
+.zonal-stats-table {
+    border-collapse: collapse;
+    background-color: #ffffff;
+    width: calc(75% - 40px); 
+    margin: 20px auto;
+}
+
+/* Table header and cells */
+.zonal-stats-table th, 
+.zonal-stats-table td {
+    border: 1px solid #bdc3c7;
+    padding: 7px 15px;
+    vertical-align: top;
+}
+
+/* Table header */
+.zonal-stats-table th {
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.1em;
+    text-align: center;
+    letter-spacing: 0.5px;
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+/* Center-align numeric data in columns 2 to 5 */
+.zonal-stats-table td:nth-child(n+2) {
+    text-align: center;
+    vertical-align: middle;  
+}
+
+/* First column (Class) */
+.zonal-stats-table .class-cell {
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+/* Specific background colors for different statuses */
+.zonal-stats-table .class-stable {
+    background-color: #EEC925;
+    color: #ffffff !important;
+}
+
+.zonal-stats-table .class-gain {
+    background-color: #6A951F;
+    color: #ffffff !important;
+}
+
+.zonal-stats-table .class-loss {
+    background-color: #FF7B00;
+    color: #ffffff !important;
 }
