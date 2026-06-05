@@ -6,58 +6,68 @@
 
 /* Map */
 #map {
-  height: 100vh; /* 70% of display */
-  width: 100%;
-  position: relative;
+    height: 100vh;
+    /* 70% of display */
+    width: 100%;
+    position: relative;
 }
 
 /* Container */
-	.container-map {
-		margin: 0 auto;
-		max-width: 100%;
-		width: 100%;
-	}
-		.container-map.medium {
-			width: 100%;
-		}
-		@media screen and (max-width: 1680px) {
-			.container-map {
-				width: 100%;
-			}
-				.container-map.medium {
-					width: 100%;
-				}
-		}
-		@media screen and (max-width: 1280px) {
-			.container-map {
-				width: 100%;
-			}
-				.container-map.medium {
-					width: 100%;
-				}
-		}
-		@media screen and (max-width: 1000px) {
-			.container-map {
-				width: 100%;
-			}
-		}
+.container-map {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+}
+
+.container-map.medium {
+    width: 100%;
+}
+
+@media screen and (max-width: 1680px) {
+    .container-map {
+        width: 100%;
+    }
+
+    .container-map.medium {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .container-map {
+        width: 100%;
+    }
+
+    .container-map.medium {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container-map {
+        width: 100%;
+    }
+}
 
 /* Mouse Pointer */
 .custom-control {
-	font-size: medium;
+    font-size: medium;
     font-weight: bold;
-	height: 40px;
-	color: #384C5F;
+    height: 40px;
+    color: #384C5F;
     bottom: 40px;
     position: absolute;
     right: 15px;
     background: #D1DBE4;
     border: 1px solid #384C5F;
     padding: 10px;
-	border-radius: 10px;
-	display: flex;           /* turn box into Flex Box */
-    justify-content: center; /* horizontal alignment*/
-    align-items: center;     /* vertical alignment */
+    border-radius: 10px;
+    display: flex;
+    /* turn box into Flex Box */
+    justify-content: center;
+    /* horizontal alignment*/
+    align-items: center;
+    /* vertical alignment */
     opacity: 0.85;
 
 }
@@ -72,7 +82,7 @@
     border: 1px solid #516E89;
     bottom: 12px;
     left: -50px;
-    min-width: 230px; 
+    min-width: 230px;
     padding: 10px;
     font-size: 12px;
     line-height: 1.5;
@@ -167,18 +177,21 @@
     width: 300px;
     margin-top: 10px;
     border: 1px solid #ccc;
+    width: 300px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
 }
 
 /* Layer switcher */
 /* Layer labels */
 .ol-layerswitcher li label span {
-  font-size: 14px !important;
+    font-size: 14px !important;
 }
 
 /* Scale line */
-.ol-scale-line-inner{
-	font-size: 14px !important;
-	font-weight: bold;
+.ol-scale-line-inner {
+    font-size: 14px !important;
+    font-weight: bold;
     background: white;
     color: #516E89;
 }
@@ -186,15 +199,15 @@
 /* Full Screen button */
 /* normal mode */
 .ol-full-screen button {
-  background-color: white;
-  color: #516E89;
-  border-radius: 8px;
-  opacity: 0.8;
+    background-color: white;
+    color: #516E89;
+    border-radius: 8px;
+    opacity: 0.8;
 }
 /* hover mode */
 .ol-full-screen button:hover {
-  background-color: #4393B3;
-  color: white
+    background-color: #4393B3;
+    color: white
 }
 
 
@@ -207,6 +220,113 @@
     align-items: center;
     gap: 8px;
 }
+
+/* ── Label used at the start of a section in the 'home' page ─────────────────────────────────── */
+.section-label {
+    text-align: left !important;
+    border-left: 3px solid #ccc;
+    padding-left: 10px !important;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    color: #888;
+    width: 100%;
+    display: block;
+}
+
+.section-label--white {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+
+/* ── Pollutant circles in the second section of the homepage ───────────────── */
+.pollutant-block {
+    margin-bottom: 2.5rem;
+}
+
+.pollutant-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0rem;
+}
+
+.pollutant-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    color: white;
+    flex-shrink: 0;
+}
+
+.pollutant-connector {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    flex-shrink: 0;
+    margin: 0 0.5rem;
+}
+
+.pollutant-connector-line {
+    flex: 1;
+    height: 1px;
+    background: white;
+}
+
+.pollutant-connector-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: white;
+    flex-shrink: 0;
+}
+
+.pollutant-title {
+    margin: 0;
+    color: white;
+    white-space: nowrap;
+}
+
+.pollutant-description {
+    text-align: justify !important;
+    margin-left: 156px;
+    text-align: left;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+
+/* ── Info table in the Homepage (with Croatia's info) ───────────────── */
+.info-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table td {
+    padding: 0.6rem 1rem;
+}
+
+.info-table td:first-child {
+    font-weight: 600;
+    color: #555;
+    white-space: nowrap;
+}
+
 
 /* ── Accordion ─────────────────────────────────── */
 .workflow-accordion {
@@ -333,50 +453,365 @@
 }
 
 .accordion-item.is-open .accordion-panel {
-    max-height: 1200px;
-    padding-bottom: 1.75rem;
+    max-height: 2000px;
+    padding-bottom: 1rem;
 }
 
-/* Il testo eredita tutto dal body: Roboto 300, 17pt, #888, justify */
+
+/* ── Scroll Arrow to go to next section ─────────────────────────────── */
+.scroll-arrow {
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-arrow a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    opacity: 0.45;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-arrow a:hover {
+    opacity: 0.85;
+    transform: translateY(4px);
+}
+
+.scroll-arrow a span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid #888;
+    border-bottom: 2px solid #888;
+    transform: rotate(45deg);
+    animation: arrowBounce 1.8s ease-in-out infinite;
+}
+
+.scroll-arrow a span:nth-child(2) {
+    animation-delay: 0.2s;
+    opacity: 0.6;
+}
+
+@keyframes arrowBounce {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(45deg) translateY(4px);
+    }
+}
+
+
+/* ── Lightbox to open the image when you click on it ──────────────────── */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.result-button-container {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+
+.result-button {
+    color: #ffffff;
+    background: #ae8894;
+}
+
+.result-button:hover {
+    background: #e4c8cf;
+    color: black;
+}
+
+/* ── Boxes used in the 'workflow' section ──────────────────── */
+.feature-card {
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 1rem 1.25rem 1.5rem 1.25rem;
+    border: 0.5px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.feature-card-title {
+    font-size: 12px;
+    color: #888;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 !important;
+    text-align: center;
+}
+
+.feature-card-content {
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+    line-height: 1.4;
+    margin: 0 !important;
+}
+
+.feature-card-title .feature-card-content {
+    height: fit-content !important;
+    width: 100% !important
+}
+
+.feature-card--study {
+    border: 1.5px solid #b79e87;
+    background-color: #f5ede6;
+}
+
+.feature-card--study .feature-card-title {
+    color: #8a7060;
+}
+
+.feature-card--time {
+    border: 1.5px solid #82463e;
+    background-color: #f5e8e7;
+}
+
+.feature-card--time .feature-card-title {
+    color: #82463e;
+}
+
+.feature-card--pollutants {
+    border: 1.5px solid #584759;
+    background-color: #ede8f0;
+}
+
+.feature-card--pollutants .feature-card-title {
+    color: #584759;
+}
+
+/* Results table */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.75rem;
+    font-size: 0.88rem;
+    color: #555;
+}
+
+.results-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    color:  #595b62;
+    background-color: #d8ddea;
+    font-weight: 500;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.results-table td {
+    padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+}
+
+.results-table code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    background: #f5f5f5;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    color: #444;
+}
+
+.results-note {
+    text-align: left;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.table-line {
+    line-height: 1.4;
+}
 
 /* CLARA  */
 
-/* 1. Structure générale du tableau (Lignes intérieures et extérieures) */
+.title-centered {
+    text-align: center;
+}
+
+/* Markers from the first list (the one with the three maps) */
+.custom-list li::marker {
+    color: #AE8894;
+    font-weight: bold;
+}
+
+/* ---------------- General tables ----------------*/
+
 table {
-    border-collapse: collapse; /* Fusionne les bordures pour éviter l'effet "double ligne" */
+    border-collapse: collapse; /* Merges borders to avoid the “double line” effect */
     width: 100%;
 }
 
+/* Table headers and cells */
 table th, table td {
-    border: 1px solid #bdc3c7; /* Lignes grises pour former les cases */
-    padding: 12px 15px;        /* Espace intérieur pour aérer les cellules */
-    vertical-align: top;       /* Aligne le contenu vers le haut */
+    border: 1px solid #bdc3c7;
+    padding: 12px 15px;
+    vertical-align: top;
 }
 
-/* 2. Titres en petites capitales et en gras */
+/* Table headers */
 table th {
     font-weight: bold;
     font-variant: small-caps;
     font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 0.5px;
-    background-color: #f8f9fa; /* Léger fond gris pour détacher l'en-tête (optionnel) */
+    background-color: #f8f9fa;
 }
 
-/* 3. Style des listes avec puces rondes devant le texte */
+/* Style for lists with round bullets before the text */
 table ul {
-    list-style-type: disc;     /* Active les puces rondes */
-    list-style-position: inside; /* Place les puces à l'intérieur de la cellule */
+    list-style-type: disc;     /* Turns on round bullets */
+    list-style-position: inside; /* Places the bullets inside the cell */
     margin: 0;
-    padding-left: 18px;        /* Décale la liste vers la droite pour que les ronds soient dans la case, juste devant le texte */
+    padding-left: 18px; /* Shifts the list to the right so that the circles are inside the box, right in front of the text */
 }
 
+/* Styling for list items inside the tables */
 table ul li {
-    margin-bottom: 6px;        /* Espace entre les lignes de la liste */
+    margin-bottom: 6px;
     line-height: 1.4;
 }
 
-/* Centre horizontalement et verticalement les colonnes 1, 2 et 3 */
+/* Centers the text in the first-three columns of all tables */
 table td:nth-child(-n+3) {
     text-align: center;
     vertical-align: middle;
+}
+
+
+/* ---------------- Concentration level table ----------------*/
+.conc-table {
+    font-family: 'Roboto', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* First line of the table */
+.conc-table thead th {
+    font-variant: small-caps;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #f8f9fa;
+    color: #333333;
+    padding: 12px;
+    border-bottom: 2px solid #cbd5e1;
+    text-align: center;
+}
+
+/* Content of the table */
+.conc-table tbody td {
+    padding: 6px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+    color: inherit;
+    font-size: 1.1em;
+}
+
+/* Specific style for the first column */
+.conc-table tbody td:first-child {
+    font-weight: bold;
+    width: 18%;
+}
+
+/* General style for numbered badges */
+.badge {
+    display: inline-block;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.9em;
+}
+
+
+/* ---------------- Zonal statistics table ----------------*/
+
+.zonal-stats-table {
+    border-collapse: collapse;
+    background-color: #ffffff;
+    width: calc(75% - 40px); 
+    margin: 20px auto;
+}
+
+/* Table header and cells */
+.zonal-stats-table th, 
+.zonal-stats-table td {
+    border: 1px solid #bdc3c7;
+    padding: 7px 15px;
+    vertical-align: top;
+}
+
+/* Table header */
+.zonal-stats-table th {
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.1em;
+    text-align: center;
+    letter-spacing: 0.5px;
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+/* Center-align numeric data in columns 2 to 5 */
+.zonal-stats-table td:nth-child(n+2) {
+    text-align: center;
+    vertical-align: middle;  
+}
+
+/* First column (Class) */
+.zonal-stats-table .class-cell {
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+/* Specific background colors for different statuses */
+.zonal-stats-table .class-stable {
+    background-color: #EEC925;
+    color: #ffffff !important;
+}
+
+.zonal-stats-table .class-gain {
+    background-color: #6A951F;
+    color: #ffffff !important;
+}
+
+.zonal-stats-table .class-loss {
+    background-color: #FF7B00;
+    color: #ffffff !important;
 }
