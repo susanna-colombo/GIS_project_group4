@@ -2,20 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic");
 
 
-/* SUSANNA  */
-
-/* Small header (for pages that are not home) */
-#header.small {
-		position: relative;
-		margin: 0;
-		background-image: url("images/overlay.png"), url("../../images/pic06.jpg");
-		background-size: auto, cover;
-		background-position: top left, center center;
-		background-repeat: repeat, no-repeat;
-		padding: 0.5em 0 0.5em 0;
-		text-align: center;
-		color: black;
-}
+/* WEB GIS CUSTOM STYLES  */
 
 /* Map */
 #map {
@@ -75,33 +62,34 @@
 
 }
 
-/* Popup */
+/* Popup styles */
 .ol-popup {
     position: absolute;
     background-color: white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     padding: 15px;
     border-radius: 10px;
-    border: 1px solid #cccccc;
+    border: 1px solid #516E89;
     bottom: 12px;
     left: -50px;
     min-width: 230px; 
     padding: 10px;
     font-size: 12px;
     line-height: 1.5;
-
+    opacity: 0.95;
 }
-
-.ol-popup h5 {
+/* Popup header */
+.ol-popup h4 {
   margin: 0 0 3pt 0;
   font-size: 14pt;
+  color: #516E89;
 }
-
+/* popup text */
 .ol-popup p {
   margin: 0pt 3pt;
   font-size: 12pt;
+  color: #516E89;
 }
-
 
 .ol-popup:after,
 .ol-popup:before {
@@ -138,7 +126,8 @@
 .ol-popup-closer:after {}
 
 /* Legend */
-.legend-container{
+/* Legend container */
+.legend-container {
     position: absolute;
     z-index: 9999;
     background-color: white;
@@ -150,46 +139,38 @@
     opacity: 0.9;
     padding-left: 6pt;
 }
-
-.legend-content ul{
+/* Legend content */
+.legend-content ul {
     list-style: none;
     color: #384959;
-	font-size: 11pt;
-	line-height: 17pt;
+    font-size: 11pt;
+    line-height: 17pt;
     line-height: 2;
 }
-
+/* Legend color */
 .legend-color {
     width: 10px;
     height: 10px;
     display: inline-block;
     margin-right: 10px;
 }
-
-.legend-title{
+/* Legend title */
+.legend-title {
     font-size: 22px;
     text-align: center;
     padding: 10px;
     display: block;
-	color: #384959;
+    color: #384959;
 }
-
+/* Legend image */
 .legend-img {
-  width: 300px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
+    width: 300px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
 }
-
-
-/* Show checkboxes and radio buttons in layer switcher
-.layer-switcher input {
-    display: inline-block !important;
-    appearance: auto !important;
-} */
-
 
 /* Layer switcher */
-
+/* Layer labels */
 .ol-layerswitcher li label span {
   font-size: 14px !important;
 }
@@ -202,26 +183,19 @@
     color: #516E89;
 }
 
-/* .ol-scale-line {
-  background: #516E89; 
-  color: white;  
-  opacity: 0.8;
-} */
-
-/* full screen button */
+/* Full Screen button */
+/* normal mode */
 .ol-full-screen button {
   background-color: white;
   color: #516E89;
   border-radius: 8px;
   opacity: 0.8;
 }
-
+/* hover mode */
 .ol-full-screen button:hover {
   background-color: #4393B3;
   color: white
 }
-
-
 
 
 

@@ -1,42 +1,67 @@
 //  GIS course - project (A.Y. 2025-2026)
 //  Group 04
+//  Authors: Susanna Colombo, Clara Wurtzer, Sara Bompieri
 //  Web GIS page
 
-
 // import all necessary modules
-import 'ol/ol.css';
-import '../../assets/css/custom.css';
-import 'ol-layerswitcher/dist/ol-layerswitcher.css';
 import { Map, View, Overlay } from 'ol';
 import { Tile, Image, Group, Vector } from 'ol/layer';
+import { fromLonLat } from 'ol/proj';
+import { createStringXY } from 'ol/coordinate';
+// sources
 import { OSM, ImageWMS, XYZ, StadiaMaps } from 'ol/source';
 import VectorSource from 'ol/source/Vector';
 import { GeoJSON } from 'ol/format';
-import { fromLonLat } from 'ol/proj';
+// map controls
 import { ScaleLine, FullScreen, MousePosition, } from 'ol/control';
-import LayerSwitcher from 'ol-layerswitcher';
-import { createStringXY } from 'ol/coordinate';
-import { Style, Fill, Stroke } from 'ol/style';
-
-// layer switcher extension
 import 'ol-ext/dist/ol-ext.css';
-import LayerSwitcher2 from 'ol-ext/control/LayerSwitcher';
+import LayerSwitcher from 'ol-ext/control/LayerSwitcher';
+// styles
+import 'ol/ol.css';
+import '../../assets/css/custom.css';
+import { Style, Fill, Stroke, Circle} from 'ol/style';
 
-
+// --------------------------------- BASE MAPS --------------------------------
 // OpenStreetMap base map
 let osm = new Tile({
     title: "Open Street Map",
-    type: "base", /* allows only single selection (one basemap at a time)*/
+    type: "base",
     visible: true,
     source: new OSM()
 });
-
-
+// Additional basemaps
+// ESRI World Street Map
+var esriWorldStreetMap = new Tile({
+	title: 'ESRI World Street Map',
+	type: 'base',
+	visible: false,
+	source: new XYZ({
+		attributions:
+			'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/' +
+			'rest/services/World_Street_Map/MapServer">ArcGIS</a>',
+		url:
+			'https://server.arcgisonline.com/ArcGIS/rest/services/' +
+			'World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+	})
+});
+// ESRI World Terrain
+var esriWorldTerrain = new Tile({
+	title: 'ESRI World Terrain',
+	type: 'base',
+	visible: false,
+	source: new XYZ({
+		attributions:
+			'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/' +
+			'rest/services/World_Terrain_Base/MapServer">ArcGIS</a>',
+		url:
+			'https://server.arcgisonline.com/ArcGIS/rest/services/' +
+			'World_Terrain_Base/MapServer/tile/{z}/{y}/{x}',
+	})
+});
+// --------------------------------- AMAC MAPS --------------------------------
 // Croatia NO2 AMAC map 2021-2023
 let Croatia_no2_AMAC_2021_2023 = new Image({
-	// type: 
     title: "NO2 AMAC map",
-    /* type not specified allows for multiple selection*/
     source: new ImageWMS({
         url: 'https://www.gis-geoserver.polimi.it/geoserver/wms',
         params: { 'LAYERS': 'gisgeoserver_04:Croatia_no2_2021_2023_AMAC_map' }
@@ -67,12 +92,10 @@ let Croatia_pm2p5_AMAC_2021_2023 = new Image({
 });
 
 
-// Croatia Bivariate maps
-
-// define style
+// --------------------------------- BIVARIATE MAPS --------------------------------
+// define custom style
 function bivariateStyle(feature) {
   const val = feature.get('bivariate');
-
   const colors = {
     '11': '#fffffe',
     '12': '#ffe8ee',
@@ -115,9 +138,8 @@ function bivariateStyle(feature) {
       color: '#232323',
       width: 1
     })
-  });
-}
-
+  })
+};
 // Croatia NO2 Bivariate map
 // define URL
 var no2URL = "https://www.gis-geoserver.polimi.it/geoserver/gisgeoserver_04/wfs?" + 
@@ -135,10 +157,9 @@ let no2Source = new VectorSource({});
 let Croatia_no2_2023_bivariate = new Vector({
     title: "Croatia NO2 bivariate map",
     source: no2Source,
-    visible: false,
+    visible: true,
     style: bivariateStyle
     });
-
 
 // call the WFS service
 fetch(no2URL)
@@ -174,7 +195,6 @@ let Croatia_pm2p5_2023_bivariate = new Vector({
     style: bivariateStyle
     });
 
-
 // call the WFS service
 fetch(pm2p5URL)
 .then((response) => {
@@ -209,7 +229,6 @@ let Croatia_pm10_2023_bivariate = new Vector({
     style: bivariateStyle
     });
 
-
 // call the WFS service
 fetch(pm10URL)
 .then((response) => {
@@ -223,11 +242,10 @@ fetch(pm10URL)
     })
 });
 
-
-// Add the layer groups code here:
+// Define layer groups
 let basemapLayers = new Group({
 	title: "Base Maps",
-	layers:  [osm]
+	layers:  [osm, esriWorldStreetMap, esriWorldTerrain],
 });
 
 let amacLayers = new Group({
@@ -261,9 +279,14 @@ let map = new Map({
     projection: 'EPSG:3857' // bc openlayers uses this crs
 });
 
-// Add the map controls here:
+// Map controls
+// Scale line
 map.addControl(new ScaleLine());
+
+// Full screen
 map.addControl(new FullScreen());
+
+// Mouse position
 map.addControl(
 	new MousePosition({
 		coordinateFormat: createStringXY(4),
@@ -272,55 +295,16 @@ map.addControl(
 		placeholder: '0.0000, 0.0000'
 	}))
 
-// Add the LayerSwitcher control here:
-// var layerSwitcher = new LayerSwitcher({
-    
-//     // activationMode: 'mouseover',
-//     // groupSelectStyle: 'children',
-//     reverse: true
-
-// });
-var layerSwitcher = new LayerSwitcher2({
+// Layer switcher
+var layerSwitcher = new LayerSwitcher({
     collapsed: false,
     show_progress: true,
     extent: true,
     opacity: true
 });
-
 map.addControl(layerSwitcher);
 
-// Additional basemaps
-var esriWorldStreetMap = new Tile({
-	title: 'ESRI World Street Map',
-	type: 'base',
-	visible: false,
-	source: new XYZ({
-		attributions:
-			'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/' +
-			'rest/services/World_Street_Map/MapServer">ArcGIS</a>',
-		url:
-			'https://server.arcgisonline.com/ArcGIS/rest/services/' +
-			'World_Street_Map/MapServer/tile/{z}/{y}/{x}',
-	})
-});
-
-var esriWorldTerrain = new Tile({
-	title: 'ESRI World Terrain',
-	type: 'base',
-	visible: false,
-	source: new XYZ({
-		attributions:
-			'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/' +
-			'rest/services/World_Terrain_Base/MapServer">ArcGIS</a>',
-		url:
-			'https://server.arcgisonline.com/ArcGIS/rest/services/' +
-			'World_Terrain_Base/MapServer/tile/{z}/{y}/{x}',
-	})
-});
-
-basemapLayers.getLayers().extend([esriWorldStreetMap,esriWorldTerrain]);
-
-// Add the popup code here:
+// Popups
 var container = document.getElementById('popup');
 var content = document.getElementById('popup-content');
 var closer = document.getElementById('popup-closer');
@@ -336,7 +320,7 @@ closer.onclick = function () {
 	return false;
 };
 
-// Add the singleclick event code here
+// Singleclick event
 map.on('singleclick', function (event) {
 	var feature = map.forEachFeatureAtPixel(
 		event.pixel, 
@@ -359,25 +343,28 @@ map.on('singleclick', function (event) {
             }
 });
 
-// add pointermove event
+// Pointermove event
 map.on('pointermove', function(event) {
 	var pixel = map.getEventPixel(event.originalEvent);
 	var hit = map.hasFeatureAtPixel(pixel);
 	map.getTarget().style.cursor = hit ? 'pointer' : '';
 });
 
-
-
-// add legend
-
+// Create and add legend
+// array of the layers
 let allLayers = [
     ...amacLayers.getLayers().getArray(),
     ...bivariateLayers.getLayers().getArray()
 ];
 
+// function to generate legend for the different layer types/sources
+let legendUpdateId = 0; // counter
+
 async function updateLegend() {
+    const currentId = ++legendUpdateId; // unique id for the legend call
     var legendHTMLString = '<ul>';
-    
+
+    // function that creates legend element
     function getLegendElement(title, color){
         return '<li>' + 
             '<span class="legend-color" style="background-color: ' + color + ' ">' + 
@@ -385,17 +372,17 @@ async function updateLegend() {
             title +
             '</span></li>';
     }
-    
-    var legendContent = document.getElementById('legend-content');
-    legendContent.innerHTML = ''
 
+    // iterate over the layers
     for(let layer of allLayers){
 
         // skip non-visible layers
         if (!layer.getVisible()) continue;
 
-        // ✅ CASO SPECIALE: layer bivariati (immagine legenda)
+        // bivariate layers: image legend
         if (bivariateLayers.getLayers().getArray().includes(layer)) {
+
+            // get layer title and build html string
             var layerTitle = layer.get('title');
 
             legendHTMLString +=
@@ -404,27 +391,36 @@ async function updateLegend() {
                     '<img src="../images/legend_bivariate_5x5.png" class="legend-img">' +
                 '</li>';
 
-            continue; // ✅ IMPORTANTISSIMO → evita di entrare negli altri casi
+            continue;
         }
 
+        // WMS layers: get legend from geoserver
         if(layer.getSource() instanceof ImageWMS){
+            // generate url to get legend in json format
             var legendURLParams = {format: "application/json"};
             var legendUrl = layer.getSource().getLegendUrl(0, legendURLParams);
+            
+            // get the legend from Geoserver in json format
             await fetch(legendUrl).then(async (response) => {
                 await response.json().then((data) => {
+                    // extract title and symbols
                     var layerTitle = layer.get('title');
                     var layerSymbolizer = data["Legend"][0]["rules"][0]["symbolizers"][0];
-
+                    console.log(data);
+                    
+                    // if the symbol is a polygon, get the fill color
                     if("Polygon" in layerSymbolizer){
                         var layerColor = layerSymbolizer["Polygon"]["fill"];
                         if(layerColor != null){
                             legendHTMLString += getLegendElement(layerTitle, layerColor);
                         }
+                    // if the symbol is a line, get the stroke color
                     } else if("Line" in layerSymbolizer){
                         var layerColor = layerSymbolizer["Line"]["stroke"];
                         if(layerColor != null){
                             legendHTMLString += getLegendElement(layerTitle, layerColor);
                         }
+                    // if the symbol is a raster (see console for structure)
                     } else if("Raster" in layerSymbolizer){
                         legendHTMLString += '<li><strong>' + layerTitle + '</strong></li>';
                         var entries = layerSymbolizer["Raster"]["colormap"]["entries"];
@@ -433,8 +429,11 @@ async function updateLegend() {
                         }
                     }
                 });
+            // check if there has been a more recent call
+            if (currentId !== legendUpdateId) return;
             });
 
+        // other sources: build the legend manually
         } else {
             var layerStyle = layer.getStyle();
             var layerColor = layerStyle.getFill().getColor();
@@ -442,21 +441,20 @@ async function updateLegend() {
             legendHTMLString += getLegendElement(layerTitle, layerColor);
         }
     }
-
+    // check again if this is the most recent call
+    if (currentId !== legendUpdateId) return;
+    // add legend content in the HTML
     var legendContent = document.getElementById('legend-content');
     legendHTMLString += "</ul>";
     legendContent.innerHTML = legendHTMLString;
 }
 
-// first call
+// call the function
 updateLegend();
 
 // update legend each time the visibility of a layer changes
-for(let amacLayer of amacLayers.getLayers().getArray()){
-    amacLayer.on('change:visible', updateLegend);
-}
-for(let bivariateLayer of bivariateLayers.getLayers().getArray()){
-    bivariateLayer.on('change:visible', updateLegend);
+for(let layer of allLayers){
+    layer.on('change:visible', updateLegend);
 }
 
 // single selection for layer groups
@@ -480,7 +478,7 @@ enableSingleLayerSelection(amacLayers);
 enableSingleLayerSelection(bivariateLayers);
 enableSingleLayerSelection(basemapLayers);
 
-// Add the layer groups to the map here, at the end of the script!
+// add layer groups to the map
 map.addLayer(basemapLayers);
 map.addLayer(amacLayers);
 map.addLayer(bivariateLayers);
