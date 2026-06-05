@@ -244,6 +244,113 @@
     gap: 8px;
 }
 
+/* ── Label used at the start of a section in the 'home' page ─────────────────────────────────── */
+.section-label {
+    text-align: left !important;
+    border-left: 3px solid #ccc;
+    padding-left: 10px !important;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    color: #888;
+    width: 100%;
+    display: block;
+}
+
+.section-label--white {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+
+/* ── Pollutant circles in the second section of the homepage ───────────────── */
+.pollutant-block {
+    margin-bottom: 2.5rem;
+}
+
+.pollutant-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0rem;
+}
+
+.pollutant-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    color: white;
+    flex-shrink: 0;
+}
+
+.pollutant-connector {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    flex-shrink: 0;
+    margin: 0 0.5rem;
+}
+
+.pollutant-connector-line {
+    flex: 1;
+    height: 1px;
+    background: white;
+}
+
+.pollutant-connector-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: white;
+    flex-shrink: 0;
+}
+
+.pollutant-title {
+    margin: 0;
+    color: white;
+    white-space: nowrap;
+}
+
+.pollutant-description {
+    text-align: justify !important;
+    margin-left: 156px;
+    text-align: left;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+
+/* ── Info table in the Homepage (with Croatia's info) ───────────────── */
+.info-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table td {
+    padding: 0.6rem 1rem;
+}
+
+.info-table td:first-child {
+    font-weight: 600;
+    color: #555;
+    white-space: nowrap;
+}
+
+
 /* ── Accordion ─────────────────────────────────── */
 .workflow-accordion {
     max-width: 960px;
@@ -466,6 +573,7 @@
     color: black;
 }
 
+/* ── Boxes used in the 'workflow' section ──────────────────── */
 .feature-card {
     background: #f4f4f4;
     border-radius: 10px;
@@ -499,6 +607,33 @@
 .feature-card-title .feature-card-content {
     height: fit-content !important;
     width: 100% !important
+}
+
+.feature-card--study {
+    border: 1.5px solid #b79e87;
+    background-color: #f5ede6;
+}
+
+.feature-card--study .feature-card-title {
+    color: #8a7060;
+}
+
+.feature-card--time {
+    border: 1.5px solid #82463e;
+    background-color: #f5e8e7;
+}
+
+.feature-card--time .feature-card-title {
+    color: #82463e;
+}
+
+.feature-card--pollutants {
+    border: 1.5px solid #584759;
+    background-color: #ede8f0;
+}
+
+.feature-card--pollutants .feature-card-title {
+    color: #584759;
 }
 
 /* Results table */

@@ -6,6 +6,8 @@
 -->
 
 <html>
+
+	<!-- Webpage title and style -->
 	<head>
 		<title>Croatia air quality analysis</title>
 		<meta charset="utf-8" />
@@ -13,185 +15,193 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/custom.css" />
 	</head>
+
+	<!-- Body of the Home page -->
 	<body class="is-preload">
 
-		<!-- Header -->
-			<section id="header" class="dark">
-				<header>
-					<h1>Croatia air quality analysis</h1>
-					<p>Geographic Information Systems Project 2026</a></p>
-					<nav id="nav"> 
-						<ul>
-							<li class="current"><a href="/pages/workflow.html">Workflow</a></li>
-							<li class="current"><a href="/pages/results.html">Results</a></li>
-							<li class="current"><a href="/pages/webgis.html">WebGIS</a></li>
-						</ul>
-					</nav>
-				</header>
-				<footer>
-					<a href="#first" class="button scrolly">Discover more</a>
-				</footer>
-			</section>
+		<!-- Header - Title and links to the other pages -->
+		<section id="header" class="dark">
+			<header>
+				<h1>Croatia air quality analysis</h1>
+				<p>Geographic Information Systems Project 2026</a></p>
+				<nav id="nav"> 
+					<ul>
+						<li class="current"><a href="/pages/workflow.html">Workflow</a></li>
+						<li class="current"><a href="/pages/results.html">Results</a></li>
+						<li class="current"><a href="/pages/webgis.html">WebGIS</a></li>
+					</ul>
+				</nav>
+			</header>
+			<footer>
+				<a href="#first" class="button scrolly">Discover more</a>
+			</footer>
+		</section>
 
-		<!-- First -->
-			<section id="first" class="main">
-				<header>
-					<div class="container">
-						<p style="text-align: left; border-left: 3px solid #ccc; padding-left: 8px; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
-  						Project Overview
-						</p>
-						<h2>Understanding air quality through land cover changes <br> and geospatial data</h2>
-						<p style="text-align: left;">Air pollution poses one of the greatest environmental health challenges of our time, affecting the quality 
-							of life of billions of people worldwide. This project investigates the relationship between land cover 
-							changes and air quality trends in Croatia, using open geospatial data from the Copernicus Atmosphere Monitoring 
-							Service (CAMS) and high-resolution land cover datasets. By combining GIS analysis with satellite-derived 
-							pollution data (NO₂, PM2.5, PM10), we explore how land use transitions between 2021 and 2023 correlate with 
-							shifts in atmospheric pollutant concentrations — and what this means for population exposure across different 
-							areas of the country. Results are presented through an interactive WebGIS platform.
-						</p>
-					</div>
-				</header>
-				<div class="content dark style1 featured">
+		<!-- First section: project overview and pollutants explanation -->
+		<section id="first" class="main">
 
-					<div class="container">
-					<p style="text-align: left; border-left: 3px solid #ccc; padding-left: 8px; font-size: 12px; color: white; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2rem;">
-						Pollutants of Interest
-					</p>
-
-					<!-- NO2 -->
-					<div style="margin-bottom: 2.5rem;">
-						<div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-							<span style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid white; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-weight: 300; color: white; flex-shrink: 0;">NO₂</span>
-							<div style="display: flex; align-items: center; width: 60px; flex-shrink: 0; margin: 0 0.5rem;">
-								<div style="flex: 1; height: 1px; background: white;"></div>
-								<div style="width: 7px; height: 7px; border-radius: 50%; background: white; flex-shrink: 0;"></div>
-							</div>
-							<h3 style="margin: 0; color: white; white-space: nowrap;">Nitrogen Dioxide</h3>
-						</div>
-						<p style="margin-left: 156px; text-align: left;">Produced mainly by vehicle engines, power plants, and industrial combustion processes. It irritates the 
-							respiratory tract, aggravates asthma, and with prolonged exposure increases the risk of chronic lung 
-							disease. NO₂ also reacts with other compounds in the atmosphere to form ground-level ozone and fine 
-							particulates, making it a key driver of secondary pollution.</p>
-					</div>
-
-					<!-- PM10 -->
-					<div style="margin-bottom: 2.5rem;">
-						<div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-							<span style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid white; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-weight: 300; color: white; flex-shrink: 0;">PM10</span>
-							<div style="display: flex; align-items: center; width: 60px; flex-shrink: 0; margin: 0 0.5rem;">
-								<div style="flex: 1; height: 1px; background: white;"></div>
-								<div style="width: 7px; height: 7px; border-radius: 50%; background: white; flex-shrink: 0;"></div>
-							</div>
-							<h3 style="margin: 0; color: white; white-space: nowrap;">Coarse Particulate Matter</h3>
-						</div>
-						<p style="margin-left: 156px; text-align: left;">Particles with a diameter under 10 micrometres, generated by road dust, construction sites, agricultural 
-							activities, and industrial processes. They penetrate the upper airways and lungs, causing respiratory 
-							irritation and aggravating conditions like bronchitis and asthma. While larger than PM2.5, they are 
-							still small enough to bypass the nose and throat's natural filtering mechanisms.</p>
-					</div>
-
-					<!-- PM2.5 -->
-					<div style="margin-bottom: 2.5rem;">
-						<div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-							<span style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid white; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-weight: 300; color: white; flex-shrink: 0;">PM2.5</span>
-							<div style="display: flex; align-items: center; width: 60px; flex-shrink: 0; margin: 0 0.5rem;">
-								<div style="flex: 1; height: 1px; background: white;"></div>
-								<div style="width: 7px; height: 7px; border-radius: 50%; background: white; flex-shrink: 0;"></div>
-							</div>
-							<h3 style="margin: 0; color: white; white-space: nowrap;">Fine Particulate Matter</h3>
-						</div>
-						<p style="margin-left: 156px; text-align: left;">The most dangerous of the three. Particles under 2.5 micrometres in diameter — produced by combustion engines, 
-							wildfires, and industrial emissions — are fine enough to penetrate deep into the lungs and even enter the 
-							bloodstream. Long-term exposure is linked to cardiovascular disease, stroke, lung cancer, and premature 
-							death. The WHO estimates PM2.5 is responsible for the majority of air pollution-related deaths globally, 
-							and there is no known safe level of exposure.</p>
-					</div>
-				
-				</div>
-
-            	<!-- Scroll Arrow -->
-					<div class="scroll-arrow">
-						<a href="#second" class="scrolly" style="color: white;">
-							<span style="border-color: white;"></span>
-							<span style="border-color: white;"></span>
-						</a>
-					</div>
-
-				</div>
-			</section>
-
-
-		<!-- Second - Croatia -->
-			<section id="second" class="main">
+			<!-- Project Overview -->
 			<header>
 			<div class="container">
-				<p style="text-align: left; border-left: 3px solid #ccc; padding-left: 8px; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
-					Region of Interest
+			<p class="section-label">Project Overview</p>
+				<h2>Understanding air quality through land cover changes <br> and geospatial data</h2>
+				<p style="text-align: justify;">Air pollution poses one of the greatest environmental health challenges of our time, 
+					affecting the quality of life of billions of people worldwide. This project investigates the relationship between land 
+					cover changes and air quality trends in Croatia, using open geospatial data from the Copernicus Atmosphere Monitoring 
+					Service (CAMS) and high-resolution land cover datasets. By combining GIS analysis with satellite-derived pollution data 
+					(NO₂, PM2.5, PM10), we explore how shifts in atmospheric pollutant concentrations between the years 2021 and 2023 
+					affect the population across different areas of the country. Results are presented through an interactive WebGIS platform.
 				</p>
-				<h2>Our study area: Croatia</h2>
+			</div>
+			</header>
 
-				<div style="display: flex; gap: 2rem; align-items: flex-start; margin-top: 1.5rem; margin-bottom: 60px;">
-					
-					<!-- Immagine . if you click on it it opens, if you click again it closes -->
-					<div style="flex: 1;">
-						<img src="images/croatia.png" alt="Croatia map" 
-							style="width: 100%; height: auto; display: block; border-radius: 12px; cursor: zoom-in;"
-							onclick="document.getElementById('lightbox').classList.add('active')">
+			<!-- Pollutants of Interest -->			
+			<div class="content dark style1 featured">
+				<div class="container">
+
+				<!-- Section Label -->
+				<p class="section-label section-label--white">Pollutants of Interest</p>
+
+				<!-- NO2 -->
+				<div class="pollutant-block">
+					<div class="pollutant-header">
+						<span class="pollutant-circle">NO₂</span>
+						<div class="pollutant-connector">
+							<div class="pollutant-connector-line"></div>
+							<div class="pollutant-connector-dot"></div>
+						</div>
+						<h3 class="pollutant-title">Nitrogen Dioxide</h3>
 					</div>
-
-					<!-- Lightbox -->
-					<div id="lightbox" class="lightbox-overlay" onclick="this.classList.remove('active')">
-						<img src="images/croatia.png" alt="Croatia map">
-					</div>
-
-					<!-- Table and description -->
-					<div style="flex: 1;">
-
-						<table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
-							<tbody>
-								<tr style="border-bottom: 1px solid #ddd;">
-									<td style="padding: 0.6rem 1rem; font-weight: 600; color: #555; white-space: nowrap;">Area</td>
-									<td style="padding: 0.6rem 1rem;">56,594 km²</td>
-								</tr>
-								<tr style="border-bottom: 1px solid #ddd;">
-									<td style="padding: 0.6rem 1rem; font-weight: 600; color: #555; white-space: nowrap;">Population</td>
-									<td style="padding: 0.6rem 1rem;">~3.9 million (2023)</td>
-								</tr>
-								<tr style="border-bottom: 1px solid #ddd;">
-									<td style="padding: 0.6rem 1rem; font-weight: 600; color: #555; white-space: nowrap;">Capital</td>
-									<td style="padding: 0.6rem 1rem;">Zagreb</td>
-								</tr>
-								<tr style="border-bottom: 1px solid #ddd;">
-									<td style="padding: 0.6rem 1rem; font-weight: 600; color: #555; white-space: nowrap;">Climate zones</td>
-									<td style="padding: 0.6rem 1rem;">Continental inland, Mediterranean coast</td>
-								</tr>
-								<tr>
-									<td style="padding: 0.6rem 1rem; font-weight: 600; color: #555; white-space: nowrap;">Land cover</td>
-									<td style="padding: 0.6rem 1rem;">Forests, agricultural fields, urban centres, coastal zones</td>
-								</tr>
-							</tbody>
-						</table>
-
-						<p style="margin-top: 1.2rem; text-align: left;">Croatia extends from the Pannonian Plain in the east to the Adriatic coast 
-							in the west, encompassing a wide variety of land cover types. This diversity makes it an interesting case study for 
-							analysing how land use patterns correlate with air quality variations. In particular, air pollution is generally higher 
-							in inland urban and industrial areas such as Zagreb and Slavonia, while coastal regions benefit from better atmospheric 
-							dispersion and lower pollutant concentrations.</p>
-					</div>
-
+					<p class="pollutant-description">Produced mainly by vehicle engines, power plants and industrial combustion 
+						processes. It irritates the respiratory tract, aggravates asthma and with prolonged exposure increases the risk of 
+						chronic lung disease. NO₂ also reacts with other compounds in the atmosphere to form ground-level ozone and fine 
+						particulates, making it a key driver of secondary pollution.</p>
 				</div>
 
-				<!-- Scroll Arrow -->
+				<!-- PM10 -->
+				<div class="pollutant-block">
+					<div class="pollutant-header">
+						<span class="pollutant-circle">PM10</span>
+						<div class="pollutant-connector">
+							<div class="pollutant-connector-line"></div>
+							<div class="pollutant-connector-dot"></div>
+						</div>
+						<h3 class="pollutant-title">Coarse Particulate Matter</h3>
+					</div>
+					<p class="pollutant-description">Particles with a diameter under 10 &micro;m, generated by road dust, 
+						construction sites, agricultural activities and industrial processes. They penetrate the upper airways and lungs, 
+						causing respiratory irritation and aggravating conditions like bronchitis and asthma. While larger than PM2.5, they are 
+						still small enough to bypass the nose and throat's natural filtering mechanisms.</p>
+				</div>
+
+				<!-- PM2.5 -->
+				<div class="pollutant-block">
+					<div class="pollutant-header">
+						<span class="pollutant-circle">PM2.5</span>
+						<div class="pollutant-connector">
+							<div class="pollutant-connector-line"></div>
+							<div class="pollutant-connector-dot"></div>
+						</div>
+						<h3 class="pollutant-title">Fine Particulate Matter</h3>
+					</div>
+					<p class="pollutant-description">The most dangerous of the three. Particles under 2.5 &micro;m in diameter, 
+						produced by combustion engines, wildfires, and industrial emissions, are fine enough to penetrate deep into the lungs 
+						and even enter the bloodstream. Long-term exposure is linked to cardiovascular disease, stroke, lung cancer and premature 
+						death. The WHO estimates PM2.5 is responsible for the majority of air pollution-related deaths globally 
+						and there is no known safe level of exposure.</p>
+				</div>
+			
+				</div>
+
+				<!-- Scroll Arrow to next section-->
 				<div class="scroll-arrow">
-					<a href="#third" class="scrolly">
-						<span></span>
-						<span></span>
+					<a href="#second" class="scrolly" style="color: white;">
+						<span style="border-color: white;"></span>
+						<span style="border-color: white;"></span>
 					</a>
 				</div>
 
 			</div>
-			</header>
-			</section>
+			
+		</section>
+
+
+		<!-- Second - Croatia -->
+		<section id="second" class="main">
+		<header>
+		<div class="container">
+
+			<!-- Label and title -->
+			<p class="section-label">Region of Interest</p>
+			<h2 style="margin-bottom: 3rem;">Our study area: Croatia</h2>
+
+			<!-- Content -->
+			<div style="display: flex; gap: 2rem; align-items: flex-start; margin-top: 1.5rem; margin-bottom: 60px;">
+				
+				<!-- Interactive Immagine of Croatia -->
+				<div style="flex: 1;">
+					<img src="images/croatia.png" alt="Croatia map" 
+						style="width: 100%; height: auto; display: block; border-radius: 12px; cursor: zoom-in;"
+						onclick="document.getElementById('lightbox').classList.add('active')">
+				</div>
+
+				<!-- Lightbox -->
+				<div id="lightbox" class="lightbox-overlay" onclick="this.classList.remove('active')">
+					<img src="images/croatia.png" alt="Croatia map">
+				</div>
+
+				<!-- Table with Croatia's info and description -->
+				<div style="flex: 1;">
+
+					<!-- Table -->
+					<table class="info-table">
+						<tbody>
+							<tr>
+								<td>Area</td>
+								<td>56,594 km²</td>
+							</tr>
+							<tr>
+								<td>Population</td>
+								<td>~3.9 million (2023)</td>
+							</tr>
+							<tr>
+								<td>Capital</td>
+								<td>Zagreb</td>
+							</tr>
+							<tr>
+								<td>Climate zones</td>
+								<td>Continental inland, Mediterranean coast</td>
+							</tr>
+							<tr>
+								<td>Land cover</td>
+								<td>Forests, agricultural fields, urban centres, coastal zones</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<!-- Land description -->
+					<p style="margin-top: 1.2rem; text-align: left;">
+						Croatia extends from the Pannonian Plain in the east to the Adriatic coast 
+						in the west, encompassing a wide variety of land cover types. This diversity makes it an interesting case study for 
+						analysing how land use patterns correlate with air quality variations. In particular, air pollution is generally higher 
+						in inland urban and industrial areas such as Zagreb and Slavonia, while coastal regions benefit from better atmospheric 
+						dispersion and lower pollutant concentrations.
+					</p>
+				</div>
+
+			</div>
+
+			<!-- Scroll Arrow -->
+			<div class="scroll-arrow">
+				<a href="#third" class="scrolly">
+					<span></span>
+					<span></span>
+				</a>
+			</div>
+
+		</div>
+		</header>
+		</section>
 
 		<!-- Third - The Team -->
 			<section id="third" class="main" style="background-color:#f5f5f5;">
