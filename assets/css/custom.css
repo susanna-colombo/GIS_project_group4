@@ -657,6 +657,16 @@
     line-height: 1.4;
 }
 
+
+code1 {
+  background-color: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.8em;
+  color: #2a25c7;
+}
+
 /* CLARA  */
 
 .custom-header {
