@@ -453,7 +453,7 @@
 }
 
 .accordion-item.is-open .accordion-panel {
-    max-height: 2000px;
+    max-height: 4000px;
     padding-bottom: 1rem;
 }
 
@@ -718,6 +718,15 @@ table ul li {
 table td:nth-child(-n+3) {
     text-align: center;
     vertical-align: middle;
+}
+
+/* ---------------- Concentration level surface table ----------------*/
+
+.conc-surf-table th, 
+.conc-surf-table td {
+    padding: 4px 12px;     /* Réduit l'espace vertical à 4px (haut/bas) */
+    line-height: 1.2;      /* Rapproche les lignes de texte, idéal pour le <br> du header */
+    vertical-align: middle; /* Aligne proprement le texte au centre vertical de la cellule */
 }
 
 /* ---------------- Concentration level table ----------------*/
