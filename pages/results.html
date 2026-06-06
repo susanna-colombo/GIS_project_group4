@@ -10,7 +10,7 @@
 	<body class="is-preload">
 
 		<!-- Header -->
-			<section id="header" class="dark results-hd">
+			<section id="header" class="dark results-hd-res">
 
 				<header style="width:100%; text-align:center;">
 					<h1>Results</h1>
@@ -28,13 +28,13 @@
 
 		<!-- Pollutant Sources -->
 			<section id="pollutant-sources" class="main">
-				<header>
+				<header class="custom-header">
 					<div class="container">
 						<h2><strong>Pollutant sources</strong></h2>
 					</div>
 					
 					<div style="margin-left: 30px; margin-right: 30px;">
-						<p style="text-align: left; margin-bottom: 10px;">
+						<p style="text-align: center; margin-bottom: 10px;">
 							First of all, we are going to recap the <strong> main sources </strong> of the <strong> three pollutants </strong> that we are interested in, that is to say PM10, PM2.5 and NO2.
 						</p>
 						<table>
@@ -47,7 +47,7 @@
 								<td>
 									<ul>
 										<li><strong>Road transport</strong>: Brake/tyre wear, clutch wear, and road dust resuspension;</li>
-										<li><strong>Agriculture</strong>: Soil tillage, harvesting, and livestock dust;</span></li>
+										<li><strong>Agriculture</strong>: Soil tillage, harvesting, and livestock dust;</li>
 									</ul>
 								</td>
 							</tr>
@@ -78,14 +78,14 @@
 			</section>
 
 			<section id="geography" class="main">
-				<header>
+				<header class="custom-header">
 					<div class="container">
 						<h2><strong>Geography of Croatia</strong></h2>
 					</div>
 
 					<!-- Geography of Croatia -->
 
-					<p style="text-align: left;">
+					<p style="text-align: center;">
 						Now that we know a bit more about each pollutant, we can start looking at the <strong>geography</strong> of Croatia.<br>
 						In particular, we have dressed three maps representing:
 					</p>
@@ -108,7 +108,13 @@
 							</button>
 							<div class="accordion-panel">
 								<p style="text-align: left;">
-									<img src="../images/croatia_regions.png" alt="Croatia regions map" style="width:100%; max-width:600px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;">
+									<img src="../images/croatia_regions.png" alt="Croatia regions map" style="width:100%; max-width:600px; display:block; margin:0 auto 20px auto; cursor:pointer;" 
+								onclick="document.getElementById('lightbox-regions').classList.add('active')" />
+
+								<div id="lightbox-regions" class="lightbox-overlay" onclick="this.classList.remove('active')">
+									<img src="../images/croatia_regions.png" alt="Croatia regions map">
+								</div>
+
 
 									<ul>
 										<li style="margin-bottom: 25px;"><strong style="color: #247D7F; font-size: 1.1em;">Istria</strong><br>
@@ -135,13 +141,16 @@
 							<div class="accordion-panel">
 								<div style="margin-left: 30px; margin-right: 30px;">
 									<p style="text-align: left; margin-bottom: 15px;">
-										<img src="../images/croatia_largest_cities.png" alt="Croatia largest cities" style="width:100%; max-width:600px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;"><br>
-									</p>
-									<p style="text-align: left; margin-bottom: 10px;">
-										Ranked by population, the <strong>five largest cities</strong> in Croatia are:
+										<img src="../images/croatia_largest_cities.png" alt="Croatia largest cities" style="width:100%; max-width:600px; display:block; margin:0 auto 20px auto; cursor:pointer;" 
+								onclick="document.getElementById('lightbox-cities').classList.add('active')" />
+
+										<div id="lightbox-cities" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/croatia_largest_cities.png" alt="Croatia largest cities">
+										</div>
+
 									</p>
 
-									<ol style="list-style-type: decimal; list-style-position: inside; padding: 0; margin: 0;">
+									<ol class="custom-list" style="list-style-type: decimal; list-style-position: inside; padding: 0; margin: 0;">
 										
 										<li style="margin-bottom: 25px;">
 											<strong>Zagreb</strong> (≈ 767,000 inhabitants)<br>
@@ -182,9 +191,16 @@
 								<span class="step-title">Bordering Countries</span>
 							</button>
 							<div class="accordion-panel">
-								<p>
-									<img src="..\images/croatia_neighbors.png" alt="Croatia neighbors map" style="width:100%; max-width:600px; margin-bottom: 20px;" style="display: block; margin: auto;">
-								</p>
+
+								<img src="../images/croatia_neighbors.png" alt="Croatia neighbors map" 
+								style="width:100%; max-width:600px; display:block; margin:0 auto 20px auto; cursor:pointer;" 
+								onclick="document.getElementById('lightbox-neighbors').classList.add('active')" />
+
+								<div id="lightbox-neighbors" class="lightbox-overlay" onclick="this.classList.remove('active')">
+									<img src="../images/croatia_neighbors.png" alt="Croatia neighbors map">
+								</div>
+
+								
 								<ul>
 									<li style="margin-bottom: 25px;"><strong style="color: #247D7F; font-size: 1.1em;">Slovenia</strong><br>
 										to the northwest</li>
@@ -198,7 +214,7 @@
 									<li style="margin-bottom: 25px;"><strong style="color: #6A951F; font-size: 1.1em;">Slavonia</strong><br>
 										to the east</li>
 								</ul>
-								<p style="text-align: left;  margin-bottom: 10px;">
+								<p style="text-align: center;  margin-bottom: 10px;">
 								Since all of them are not members of the European Union, they have quite different policies regarding <strong>environment</strong>.
 								</p>
 								<table>
@@ -240,13 +256,13 @@
 
 		<!-- Air quality -->
 			<section id="air-quality" class="main">
-				<header>
+				<header class="custom-header">
 					<div class="container">
 						<h2><strong>Air quality</strong> — <i style="color:#AE8894;">Step 2</i></h2>
 					</div>
 
 					<div style="margin-left: 30px; margin-right: 30px;">
-						<p style="text-align: left; margin-bottom: 20px;">
+						<p style="text-align: center; margin-bottom: 10px;">
 							Armed with this geographical overview, we can now <strong>classify</strong> each of the biggest cities and regions into different <strong>categories</strong>.
 						</p>
 						<table>
@@ -366,11 +382,11 @@
 								<span class="step-title">Geographical pollution — Steps 2 & 3</span>
 							</button>
 							<div class="accordion-panel">
-								<p style="text-align: left;">
+								<p style="text-align: justify;">
 									Since pollutant concentrations operate on different scales and are governed by different emission sources, a direct numerical comparison between PM10, PM2.5, and NO2 is not meaningful. That is why we only can use the annual mean rasters from <strong style="color:#AE8894;">Step 2</strong> to understand spatial patterns within each pollutant.
 								</p>
 								<p>
-									<h2 style="margin-bottom: 0.2em; font-size: 1.75em;">
+									<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 										<span style="color:#666; font-weight:400;">Results & Analysis</span> —
 										<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 2</span>
 									</h2>
@@ -378,21 +394,37 @@
 								
 								<div style="max-width: 800px; margin: 0 auto;">
 									<div style="clear: both; margin-bottom: 30px;">
-										<img src="..\images\Step_2-Average_pm10.png" align="left" style="width: 300px; margin-right: 20px; margin-bottom: 50px;" alt="PM10">
-										<strong style="color:#516E89; font-family: inherit; font-size: 1.2em;">PM10</strong>
-										<p>Shows a relatively uniform distribution across the country, with elevated concentrations along the Slovenian border, throughout the Slavonia plain, and in the Zagreb metropolitan area.</p>
+										<img src="..\images\Step_2-Average_pm10.png" align="left" style="width:300px; margin-left: 20px; margin-bottom: 50px; cursor:pointer;" alt="PM10"
+								onclick="document.getElementById('lightbox-average-pm10').classList.add('active')">
+ 
+										<div id="lightbox-average-pm10" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Step_2-Average_pm10.png" alt="Croatia largest cities">
+										</div>
+
+										<strong style="color:#516E89; font-family: inherit; font-size: 1.2em; margin-bottom: 10px;">PM10</strong>
+										<p style="margin: 10px 0px 0px 0px;">Shows a relatively uniform distribution across the country, with elevated concentrations along the Slovenian border, throughout the Slavonia plain, and in the Zagreb metropolitan area.</p>
 									</div>
 
 									<div style="clear: both; margin-bottom: 30px;">
-										<img src="..\images\Step_2-Average_pm2p5.png" align="right" style="width: 300px; margin-left: 20px; margin-bottom: 50px;" alt="PM2.5">
-										<strong style="color:#516E89; font-family: inherit; font-size: 1.2em;">PM2.5</strong>
-										<p>Is most elevated in Zagreb, across northern Croatia along the Slovenian and Hungarian border, and near the border with Bosnia and Herzegovina.</p>
+										<img src="..\images\Step_2-Average_pm2p5.png" align="right" style="width: 300px; margin-left: 20px; margin-bottom: 50px; cursor:pointer;" alt="Average PM2.5" onclick="document.getElementById('lightbox-average-pm2p5').classList.add('active')">
+
+										<div id="lightbox-average-pm2p5" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Step_2-Average_pm2p5.png" alt="Average PM2.5">
+										</div>
+
+										<strong style="color:#516E89; font-family: inherit; font-size: 1.2em; margin-bottom: 10px;">PM2.5</strong>
+										<p style="margin: 10px 0px 0px 0px;">Is most elevated in Zagreb, across northern Croatia along the Slovenian and Hungarian border, and near the border with Bosnia and Herzegovina.</p>
 									</div>
 
 									<div style="clear: both; margin-bottom: 30px;">
-										<img src="..\images\Step_2-Average_no2.png" align="left" style="width: 300px; margin-right: 20px; margin-bottom: 50px;" alt="NO2">
-										<strong style="color:#516E89; font-family: inherit; font-size: 1.2em;">NO2</strong>
-										<p>Is strongly concentrated in Zagreb, with secondary peaks visible in Osijek and across Slavonia, in Split, and in the Rijeka–Istria corridor. All those areas are characterised by high road traffic density, port activity, or industrial infrastructure.</p>
+										<img src="..\images\Step_2-Average_no2.png" align="left" style="width: 300px; margin-right: 20px; margin-bottom: 50px; cursor:pointer;" alt="Average NO2" onclick="document.getElementById('lightbox-average-no2').classList.add('active')">
+
+										<div id="lightbox-average-no2" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Step_2-Average_no2.png" alt="Average NO2">
+										</div>
+
+										<strong style="color:#516E89; font-family: inherit; font-size: 1.2em; margin-bottom: 10px;">NO2</strong>
+										<p style="margin: 10px 0px 0px 0px;">Is strongly concentrated in Zagreb, with secondary peaks visible in Osijek and across Slavonia, in Split, and in the Rijeka–Istria corridor. All those areas are characterised by high road traffic density, port activity, or industrial infrastructure.</p>
 									</div>
 
 									<p style="text-align: left; margin-top: 20px; clear: left;">
@@ -453,7 +485,7 @@
 								</table>
 
 								<p>
-									<h2 style="margin-bottom: 0.2em; font-size: 1.75em;">
+									<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 										<span style="color:#666; font-weight:400;">Results</span> —
 										<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 3</span>
 									</h2>
@@ -462,18 +494,31 @@
 								<div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; max-width: 1200px; margin: 20px auto; font-family: inherit;">
 
 									<div style="flex: 1; text-align: center;">
-										<img src="..\images\Step_3-Concentration_map_pm10.png" style="width: 100%; height: auto; border-radius: 4px;" alt="PM10">
+										<img src="..\images\Step_3-Concentration_map_pm10.png" style="width: 100%; height: auto; border-radius: 4px; cursor:pointer" alt="Concentration map PM10" onclick="document.getElementById('lightbox-concentration-pm10').classList.add('active')">
 										<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">PM10</strong>
+
+										<div id="lightbox-concentration-pm10" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Step_3-Concentration_map_pm10.png" alt="Concentration map PM10">
+										</div>
 									</div>
 
 									<div style="flex: 1; text-align: center;">
-										<img src="..\images\Step_3-Concentration_map_pm2p5.png" style="width: 100%; height: auto; border-radius: 4px;" alt="PM2.5">
+										<img src="..\images\Step_3-Concentration_map_pm2p5.png" style="width: 100%; height: auto; border-radius: 4px; cursor:pointer" alt="Concentration map PM2.5" onclick="document.getElementById('lightbox-concentration-pm2p5').classList.add('active')">
 										<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">PM2.5</strong>
+
+										<div id="lightbox-concentration-pm2p5" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Step_3-Concentration_map_pm2p5.png" alt="Concentration map PM2.5">
+										</div>
 									</div>
 
 									<div style="flex: 1; text-align: center;">
-										<img src="..\images\Step_3-Concentration_map_no2.png" style="width: 100%; height: auto; border-radius: 4px;" alt="NO2">
-										<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">NO2</strong>
+										<img src="..\images\Step_3-Concentration_map_no2.png" style="width: 100%; height: auto; border-radius: 4px; cursor:pointer" alt="Concentration map NO2" onclick="document.getElementById('lightbox-concentration-no2').classList.add('active')">
+										<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">Concentration map NO2</strong>
+
+										<div id="lightbox-concentration-no2" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Step_3-Concentration_map_no2.png" alt="Concentration map NO2">
+										</div>
+
 									</div>
 								</div>
 								
@@ -513,7 +558,7 @@
 								</table>
 
 								<p>
-									<h2 style="margin-bottom: 0.2em; font-size: 1.75em;">
+									<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 										<span style="color:#666; font-weight:400;">Analysis</span> —
 										<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 3</span>
 									</h2>
@@ -548,10 +593,10 @@
 								<span class="step-title">Temporal pollution — Steps 1 & 4</span>
 							</button>
 							<div class="accordion-panel">
-								<p style="text-align: left;">
+								<p style="text-align: justify;">
 									For this analysis, we reuse the same processing workflow as in <strong style="color:#AE8894;">Step 1</strong>, but aggregate the monthly CAMS data by season rather than by full year.
 								</p>
-								<p style="text-align: left;">
+								<p style="text-align: justify;">
 									Pollutant concentrations in Croatia are strongly driven by <strong>seasonal factors</strong>. That is why we have produced four seasonal concentration maps for each pollutant:
 								</p>
 								<ul>
@@ -560,11 +605,11 @@
 									<li><strong>Summer</strong> (June – August)</li>
 									<li><strong>Autumn</strong> (September – November)</li>
 								</ul>
-								<p style="text-align: left; margin-bottom: 20px;">
+								<p style="text-align: justify; margin-bottom: 30px;">
 									To quantify the seasonal amplitude of each pollutant, we computed the <strong>“Winter – Summer”</strong> difference raster using the <i>Raster Calculator</i>.
 								</p>
 
-								<h2 style="margin-bottom: 0.2em; font-size: 1.75em;">
+								<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 									<span style="color:#666; font-weight:400;">Results & Analysis</span> —
 									<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 1</span>
 								</h2>
@@ -575,56 +620,83 @@
 								</ul>
 								
 								
-								<div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 40px; font-family: inherit;">
-									<img src="..\images\Bonus_Diff-Winter-Summer_pm10.png" style="width: 300px; margin-right: 30px; flex-shrink: 0;" alt="PM10">
+								<div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 40px; font-family: inherit; padding-left: 40px; padding-right: 40px;">
+									<img src="..\images\Bonus_Diff-Winter-Summer_pm10.png" style="width: 300px; margin-right: 30px; flex-shrink: 0; cursor:pointer" alt="Difference Winter-Summer PM10" onclick="document.getElementById('lightbox-diff-summer-winter-pm10').classList.add('active')">
 									<div>
 										<strong style="color:#516E89; font-family: inherit; font-size: 1.2em; display: block; margin-bottom: 5px;">PM10</strong>
+
+										<div id="lightbox-diff-summer-winter-pm10" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Bonus_Diff-Winter-Summer_pm10.png" alt="Difference Winter-Summer PM10">
+										</div>
+
 										<p style="margin: 0;">Highest concentrations occur in winter, reflecting heating-related emissions.</p>
 									</div>
 								</div>
 
-								<div style="display: flex; align-items: center; justify-content: flex-start; flex-direction: row-reverse; margin-bottom: 40px; font-family: inherit;">
-									<img src="..\images\Bonus_Diff-Winter-Summer_pm2p5.png" style="width: 300px; margin-left: 30px; flex-shrink: 0;" alt="PM2.5">
+								<div style="display: flex; align-items: center; justify-content: flex-start; flex-direction: row-reverse; margin-bottom: 40px; font-family: inherit; padding-left: 40px; padding-right: 40px;">
+									<img src="..\images\Bonus_Diff-Winter-Summer_pm2p5.png" style="width: 300px; margin-left: 30px; flex-shrink: 0; cursor:pointer" alt="Difference Winter-Summer PM2.5" onclick="document.getElementById('lightbox-diff-summer-winter-pm2p5').classList.add('active')">
 									<div style="flex-grow: 1;">
 										<strong style="color:#516E89; font-family: inherit; font-size: 1.2em; display: block; margin-bottom: 5px;">PM2.5</strong>
+
+										<div id="lightbox-diff-summer-winter-pm2p5" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Bonus_Diff-Winter-Summer_pm2p5.png" alt="Difference Winter-Summer PM2.5">
+										</div>
+
 										<p style="margin: 0;">Follows the same winter pattern as PM10, due to similar emission sources.</p>
 									</div>
 								</div>
 
-								<div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 40px; font-family: inherit;">
-									<img src="..\images\Bonus_Diff-Winter-Summer_no2.png" style="width: 300px; margin-right: 30px; flex-shrink: 0;" alt="NO2">
+								<div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 40px; font-family: inherit; padding-left: 40px; padding-right: 40px;">
+									<img src="..\images\Bonus_Diff-Winter-Summer_no2.png" style="width: 300px; margin-right: 30px; flex-shrink: 0; cursor:pointer" alt="Difference Winter-Summer NO2" onclick="document.getElementById('lightbox-diff-summer-winter-no2').classList.add('active')">
 									<div>
 										<strong style="color:#516E89; font-family: inherit; font-size: 1.2em; display: block; margin-bottom: 5px;">NO2</strong>
+
+										<div id="lightbox-diff-summer-winter-no2" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Bonus_Diff-Winter-Summer_no2.png" alt="Difference Winter-Summer NO2">
+										</div>
+
 										<p style="margin: 0;">Peaks in summer, particularly along the coast, driven by traffic and tourism activities.</p>
 									</div>
 								</div>
 
-								<p style="text-align: left;">
+								<p style="text-align: justify;">
 									While concentration maps show current air quality in Croatia, the Annual Mean Aggregation Change (AMAC) highlights whether pollutant levels increased or decreased <strong>between 2021 and 2023</strong>.
 								</p>
 
 								<p>
-									<h2 style="margin-bottom: 0.2em; font-size: 1.75em;">
+									<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 										<span style="color:#666; font-weight:400;">Results</span> —
 										<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 4</span>
 									</h2>
 								</p>
 								
-								<div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; max-width: 1200px; margin: 20px auto; font-family: inherit;">
+								<div style="display: flex; gap: 40px; justify-content: space-between; width: 100%; max-width: 1200px; margin: 20px auto; font-family: inherit;">
 
 									<div style="flex: 1; text-align: center;">
-										<img src="..\images\Step_4-AMAC_map_pm10.png" style="width: 100%; height: auto; border-radius: 4px;" alt="PM10">
+										<img src="..\images\Step_4-AMAC_map_pm10.png" style="width: 100%; height: auto; border-radius: 4px; cursor:pointer" alt="AMAC PM10" onclick="document.getElementById('lightbox-amac-pm10').classList.add('active')">
 										<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">PM10</strong>
+
+										<div id="lightbox-amac-pm10" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Step_4-AMAC_map_pm10.png" alt="AMAC PM10">
+										</div>
 									</div>
 
 									<div style="flex: 1; text-align: center;">
-										<img src="..\images\Step_4-AMAC_map_pm2p5.png" style="width: 100%; height: auto; border-radius: 4px;" alt="PM2.5">
+										<img src="..\images\Step_4-AMAC_map_pm2p5.png" style="width: 100%; height: auto; border-radius: 4px; cursor:pointer" alt="AMAC PM2.5" onclick="document.getElementById('lightbox-amac-pm2p5').classList.add('active')">
 										<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">PM2.5</strong>
+
+										<div id="lightbox-amac-pm2p5" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Step_4-AMAC_map_pm2p5.png" alt="AMAC PM2.5">
+										</div>
 									</div>
 
 									<div style="flex: 1; text-align: center;">
-										<img src="..\images\Step_4-AMAC_map_no2.png" style="width: 100%; height: auto; border-radius: 4px;" alt="NO2">
+										<img src="..\images\Step_4-AMAC_map_no2.png" style="width: 100%; height: auto; border-radius: 4px; cursor:pointer" alt="AMAC NO2" onclick="document.getElementById('lightbox-amac-no2').classList.add('active')">
 										<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">NO2</strong>
+
+										<div id="lightbox-amac-no2" class="lightbox-overlay" onclick="this.classList.remove('active')">
+											<img src="../images/Step_4-AMAC_map_no2.png" alt="AMAC NO2">
+										</div>
 									</div>
 
 								</div>
@@ -633,7 +705,7 @@
 									According to the legend, the zones in blue and green correspond to the Pollution Decrease zones, whereas the orange and red zones correspond to the Pollution Increase zones, between 2021 and 2023.
 								</p>
 								
-								<h2 style="margin-bottom: 0.2em; font-size: 1.75em;">
+								<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 										<span style="color:#666; font-weight:400;">Analysis</span> —
 										<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 4</span>
 								</h2>
@@ -649,28 +721,32 @@
 			</section>
 
 			<section id="land-use-pollutants-correlation" class="main">
-				<header>
+				<header class="custom-header">
 					<div class="container">
 						<h2><strong>Land use-pollutants correlation</strong> — <i style="color:#a56365; font-weight:100; font-style:italic;">Steps 5 & 6</i></h2>
 					</div>
 					
-					<div style="margin-left: 30px; margin-right: 30px;">
-						<p style="text-align: left;">
+					<div style="margin-left: 100px; margin-right: 100px;">
+						<p style="text-align: justify;">
 							This section examines the spatial correlation between <strong>land cover changes</strong> and <strong>pollutant concentration shifts</strong> in Croatia from 2021 to 2023 to analyze how land use directly impacts air quality.
 						</p>
 
-						<h2 style="margin-bottom: 1em; font-size: 1.75em;">
+						<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 							<span style="color:#666; font-weight:400;">Results</span> —
 							<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 5</span>
 						</h2>
 
-						<img src="..\images\Step_5-LandCoverChange.png" style="width: 100%; height: auto; border-radius: 4px;" alt="Land Cover Change">
+						<img src="..\images\Step_5-LandCoverChange.png" style="width: 50%; height: auto; border-radius: 4px; cursor:pointer" alt="Land Cover Change" onclick="document.getElementById('lightbox-lcc').classList.add('active')">
 
-						<p style="text-align: left; margin-bottom: 10px;">
+						<div id="lightbox-lcc" class="lightbox-overlay" onclick="this.classList.remove('active')">
+							<img src="../images/Step_5-LandCoverChange.png" alt="Land Cover Change">
+						</div>
+
+						<p style="text-align: justify; margin-bottom: 20px;">
 							However, we cannot extract a lot of information on it. That is why we are using the <strong>zonal statistics</strong> derived from the <strong style="color:#AE8894;">Step 6</strong> for further and more interesting analysis.
 						</p>
 
-						<h2 style="margin-bottom: 0.2em; font-size: 1.75em;">
+						<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 							<span style="color:#666; font-weight:400;">Results</span> —
 							<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 6</span>
 						</h2>
@@ -679,7 +755,7 @@
 							<li style="margin-bottom: 0.5em;">
 								<strong style="color:#516E89;">PM10</strong>:
 
-								<table class="zonal-stats-table">
+								<table class="zonal-stats-table" style="margin-bottom: 30px;">
 									<thead>
 										<tr>
 											<th>Indicator</th>
@@ -689,91 +765,55 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td>Stability (Persistence)</td>
+											<td><strong>Stability (Persistence)</strong></td>
 											<td>97.2</td>
 											<td>n/a</td>
 										</tr>
 										<tr>
 											<td class="class-cell class-gain">Sources of gain (top 3)</td>
-											<td></td>
-											<td></td>
+											<td class="class-cell class-gain"></td>
+											<td class="class-cell class-gain"></td>
 										</tr>
 										<tr>
-											<td>1st</td>
+											<td class="class-cell class-gain-1st">1st</td>
 											<td>73.5</td>
 											<td>Rangeland</td>
 										</tr>
 										<tr>
-											<td>2nd</td>
+											<td class="class-cell class-gain-2nd">2nd</td>
 											<td>18.6</td>
 											<td>Crops</td>
 										</tr>
 										<tr>
-											<td>3rd</td>
+											<td class="class-cell class-gain-3rd">3rd</td>
 											<td>5.2</td>
 											<td>Built Area</td>
 										</tr>
 										<tr>
-											<td class="class-cell class-gain">Destinations of loss (top 3)</td>
-											<td></td>
-											<td></td>
+											<td class="class-cell class-loss">Destinations of loss (top 3)</td>
+											<td class="class-cell class-loss"></td>
+											<td class="class-cell class-loss"></td>
 										</tr>
 										<tr>
-											<td>1st</td>
+											<td class="class-cell class-loss-1st">1st</td>
 											<td>63.8</td>
 											<td>Rangeland</td>
 										</tr>
 										<tr>
-											<td>2nd</td>
+											<td class="class-cell class-loss-2nd">2nd</td>
 											<td>21.4</td>
 											<td>Crops</td>
 										</tr>
 										<tr>
-											<td>3rd</td>
+											<td class="class-cell class-loss-3rd">3rd</td>
 											<td>7.2</td>
 											<td>Built Area</td>
 										</tr>
 									</tbody>
 								</table>
 
-								<!-- Zonal statistics table 
-								<table class="zonal-stats-table">
-									<thead>
-										<tr>
-											<th>Class</th>
-											<th><i>Trees change</i></th>
-											<th><i>Mean</i></th>
-											<th><i>Min</i></th>
-											<th><i>Max</i></th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td class="class-cell class-stable">Stable</td>
-											<td>1</td>
-											<td>-2.78</td>
-											<td>-8.07</td>
-											<td>1.83</td>
-										</tr>
-										<tr>
-											<td class="class-cell class-gain">Gain</td>
-											<td>2</td>
-											<td>-2.95</td>
-											<td>-8.07</td>
-											<td>1.83</td>
-										</tr>
-										<tr>
-											<td class="class-cell class-loss">Loss</td>
-											<td>3</td>
-											<td>-2.95</td>
-											<td>-8.07</td>
-											<td>1.83</td>
-										</tr>
-									</tbody>
-								</table>-->
-
 								<div style="display: flex; align-items: center; gap: 20px; width: 100%; margin-bottom: 40px;">
-									<img src="..\images\ZS_pm10.png" style="width: 50%; height: auto; flex-shrink: 0;" alt="Zonal Statistics PM10">
+									<img src="..\images\ZS_pm10.png" style="width: 40%; height: auto; flex-shrink: 0;" alt="Zonal Statistics PM10">
 									<div style="flex: 1;">
 										<h3 class="title-centered">Trees</h3>
 										<p>The <strong>near-identical values</strong> across all three zones suggest that tree cover change has limited direct influence on PM10 concentrations.</p>
@@ -782,43 +822,66 @@
 							</li>
 							<li style="margin-bottom: 0.5em;">
 								<strong style="color:#516E89;">PM2.5</strong>:
-								<table class="zonal-stats-table">
+								
+								<table class="zonal-stats-table" style="margin-bottom: 30px;">
 									<thead>
 										<tr>
-											<th>Class</th>
-											<th><i>Crops change</i></th>
-											<th><i>Mean</i></th>
-											<th><i>Min</i></th>
-											<th><i>Max</i></th>
+											<th>Indicator</th>
+											<th>Value <br>(%)</th>
+											<th>Category</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td class="class-cell class-stable">Stable</td>
-											<td>1</td>
-											<td>-1.80</td>
-											<td>-4.44</td>
-											<td>3.06</td>
+											<td><strong>Stability (Persistence)</strong></td>
+											<td>94.2</td>
+											<td>n/a</td>
 										</tr>
 										<tr>
-											<td class="class-cell class-gain">Gain</td>
-											<td>2</td>
-											<td>-1.47</td>
-											<td>-4.44</td>
-											<td>3.06</td>
+											<td class="class-cell class-gain">Sources of gain (top 3)</td>
+											<td class="class-cell class-gain"></td>
+											<td class="class-cell class-gain"></td>
 										</tr>
 										<tr>
-											<td class="class-cell class-loss">Loss</td>
-											<td>3</td>
-											<td>-1.38</td>
-											<td>-4.44</td>
-											<td>3.06</td>
+											<td class="class-cell class-gain-1st">1st</td>
+											<td>39.0</td>
+											<td>Rangeland</td>
+										</tr>
+										<tr>
+											<td class="class-cell class-gain-2nd">2nd</td>
+											<td>37.9</td>
+											<td>Trees</td>
+										</tr>
+										<tr>
+											<td class="class-cell class-gain-3rd">3rd</td>
+											<td>21.7</td>
+											<td>Built Ground</td>
+										</tr>
+										<tr>
+											<td class="class-cell class-loss">Destinations of loss (top 3)</td>
+											<td class="class-cell class-loss"></td>
+											<td class="class-cell class-loss"></td>
+										</tr>
+										<tr>
+											<td class="class-cell class-loss-1st">1st</td>
+											<td>44.7</td>
+											<td>Rangeland</td>
+										</tr>
+										<tr>
+											<td class="class-cell class-loss-2nd">2nd</td>
+											<td>39.2</td>
+											<td>Trees</td>
+										</tr>
+										<tr>
+											<td class="class-cell class-loss-3rd">3rd</td>
+											<td>14.7</td>
+											<td>Built Ground</td>
 										</tr>
 									</tbody>
 								</table>
 
 								<div style="display: flex; align-items: center; flex-direction: row-reverse; gap: 20px; width: 100%; margin-bottom: 40px;">
-									<img src="..\images\ZS_pm2p5.png" style="width: 50%; height: auto; flex-shrink: 0;" alt="Zonal Statistics PM2.5">
+									<img src="..\images\ZS_pm2p5.png" style="width: 40%; height: auto; flex-shrink: 0;" alt="Zonal Statistics PM2.5">
 									<div style="flex: 1;">
 										<h3 class="title-centered">Crops</h3>
 										<p>Areas where cropland was lost experienced the <strong>smallest improvement</strong> in PM2.5 concentrations.</p>
@@ -827,43 +890,66 @@
 							</li>
 							<li>
 								<strong style="color:#516E89;">NO2</strong>:
-								<table class="zonal-stats-table">
+								
+								<table class="zonal-stats-table" style="margin-bottom: 30px;">
 									<thead>
 										<tr>
-											<th>Class</th>
-											<th><i>Built Areas change</i></th>
-											<th><i>Mean</i></th>
-											<th><i>Min</i></th>
-											<th><i>Max</i></th>
+											<th>Indicator</th>
+											<th>Value <br>(%)</th>
+											<th>Category</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td class="class-cell class-stable">Stable</td>
-											<td>1</td>
-											<td>-1.49</td>
-											<td>-5.16</td>
-											<td>1.81</td>
+											<td><strong>Stability (Persistence)</strong></td>
+											<td>92.0</td>
+											<td>n/a</td>
 										</tr>
 										<tr>
-											<td class="class-cell class-gain">Gain</td>
-											<td>2</td>
-											<td>-1.04</td>
-											<td>-5.16</td>
-											<td>1.81</td>
+											<td class="class-cell class-gain">Sources of gain (top 3)</td>
+											<td class="class-cell class-gain"></td>
+											<td class="class-cell class-gain"></td>
 										</tr>
 										<tr>
-											<td class="class-cell class-loss">Loss</td>
-											<td>3</td>
-											<td>-1.33</td>
-											<td>-5.16</td>
-											<td>1.81</td>
+											<td class="class-cell class-gain-1st">1st</td>
+											<td>45.0</td>
+											<td>Crops</td>
+										</tr>
+										<tr>
+											<td class="class-cell class-gain-2nd">2nd</td>
+											<td>30.3</td>
+											<td>Rangeland</td>
+										</tr>
+										<tr>
+											<td class="class-cell class-gain-3rd">3rd</td>
+											<td>23.2</td>
+											<td>Trees</td>
+										</tr>
+										<tr>
+											<td class="class-cell class-loss">Destinations of loss (top 3)</td>
+											<td class="class-cell class-loss"></td>
+											<td class="class-cell class-loss"></td>
+										</tr>
+										<tr>
+											<td class="class-cell class-loss-1st">1st</td>
+											<td>39.9</td>
+											<td>Crops</td>
+										</tr>
+										<tr>
+											<td class="class-cell class-loss-2nd">2nd</td>
+											<td>34.0</td>
+											<td>Crops</td>
+										</tr>
+										<tr>
+											<td class="class-cell class-loss-3rd">3rd</td>
+											<td>24.5</td>
+											<td>Rangeland</td>
 										</tr>
 									</tbody>
 								</table>
 
 								<div style="display: flex; align-items: center; gap: 20px; width: 100%; margin-bottom: 40px;">
-									<img src="..\images\ZS_no2.png" style="width: 50%; height: auto; flex-shrink: 0;" alt="Zonal Statistics NO2">
+									<img src="..\images\ZS_no2.png" style="width: 40%; height: auto; flex-shrink: 0;" alt="Zonal Statistics NO2">
 									<div style="flex: 1;">
 										<h3 class="title-centered">Built Areas</h3>
 										<p>Areas where built-up cover expanded between 2021 and 2023 benefited from the <strong>smallest reduction</strong> in NO2 concentrations.</p>
@@ -876,16 +962,16 @@
 			</section>
 
 			<section id="population-exposure" class="main">
-				<header>
+				<header class="custom-header">
 					<div class="container">
 						<h2><strong>Population exposure to air pollution</strong> — <i style="color:#a56365; font-weight:100; font-style:italic;">Steps 7 & 8</i></h2>
 					</div>
 					
-					<div style="margin-left: 30px; margin-right: 30px;">
-						<p style="text-align: left;">
+					<div style="margin-left: 100px; margin-right: 100px;">
+						<p style="text-align: justify;">
 							Beyond concentration levels alone, the critical public health question is where high pollution coincides with high population density.
 						</p>
-						<p style="text-align: left; margin-bottom: 20px;">
+						<p style="text-align: justify; margin-bottom: 20px;">
 							The bivariate maps produced in <strong style="color:#AE8894;">Step 7</strong> address this directly, combining pollution class (1–5) with population density class (1–5) at the provincial level to identify the territories of greatest concern.
 						</p>
 
@@ -894,36 +980,48 @@
 							<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 7</span>
 						</h2>
 
-						<div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; max-width: 1200px; margin: 20px auto; font-family: inherit;">
+						<div style="display: flex; gap: 40px; justify-content: space-between; width: 100%; max-width: 1200px; margin: 20px auto; font-family: inherit;">
 
 							<div style="flex: 1; text-align: center;">
-								<img src="..\images\Step_7-Bivariate_pm10.png" style="width: 100%; height: auto; border-radius: 4px;" alt="PM10">
+								<img src="..\images\Step_7-Bivariate_pm10.png" style="width: 100%; height: auto; border-radius: 4px; cursor:pointer" alt="Bivariate PM10" onclick="document.getElementById('lightbox-bivariate-pm10').classList.add('active')">
 								<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">PM10</strong>
+
+								<div id="lightbox-bivariate-pm10" class="lightbox-overlay" onclick="this.classList.remove('active')">
+									<img src="../images/Step_7-Bivariate_pm10.png" alt="Bivariate PM10">
+								</div>
 							</div>
 
 							<div style="flex: 1; text-align: center;">
-								<img src="..\images\Step_7-Bivariate_pm2p5.png" style="width: 100%; height: auto; border-radius: 4px;" alt="PM2.5">
+								<img src="..\images\Step_7-Bivariate_pm2p5.png" style="width: 100%; height: auto; border-radius: 4px; cursor:pointer" alt="Bivariate PM2.5" onclick="document.getElementById('lightbox-bivariate-pm2p5').classList.add('active')">
 								<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">PM2.5</strong>
+
+								<div id="lightbox-bivariate-pm2p5" class="lightbox-overlay" onclick="this.classList.remove('active')">
+									<img src="../images/Step_7-Bivariate_pm2p5.png" alt="Bivariate PM2.5">
+								</div>
 							</div>
 
 							<div style="flex: 1; text-align: center;">
-								<img src="..\images\Step_7-Bivariate_no2.png" style="width: 100%; height: auto; border-radius: 4px;" alt="NO2">
+								<img src="..\images\Step_7-Bivariate_no2.png" style="width: 100%; height: auto; border-radius: 4px; cursor:pointer" alt="Bivariate NO2" onclick="document.getElementById('lightbox-bivariate-no2').classList.add('active')">
 								<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">NO2</strong>
+
+								<div id="lightbox-bivariate-no2" class="lightbox-overlay" onclick="this.classList.remove('active')">
+									<img src="../images/Step_7-Bivariate_no2.png" alt="Bivariate NO2">
+								</div>
 							</div>
 
 						</div>
 
-						<h2 style="margin-bottom: 0.2em; font-size: 1.75em;">
+						<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 							<span style="color:#666; font-weight:400;">Analysis</span> —
 							<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 7</span>
 						</h2>
 
-						<p style="text-align: left;">
+						<p style="text-align: justify;">
 							<strong>Zagreb</strong> stands out as the undisputed critical zone for all three pollutants, combining the highest pollution class with the highest population density, that is to say the worst-case bivariate category.
 						</p>
-						<p style="text-align: left;">
+						<p style="text-align: justify;">
 							Beyond the capital, the maps reveal meaningful differences between pollutants.
-							<ul style="list-style: disc; padding-left: 1.25em; text-align: left;">
+							<ul style="list-style: disc; padding-left: 1.25em; text-align: justify;">
 								<li style="margin-bottom: 0.5em;">
 									<strong style="color:#516E89;">PM10</strong> and <strong style="color:#516E89;">PM2.5</strong>: Eastern Croatian provinces show high pollution despite moderate population density, pointing to a diffuse rural exposure risk driven by biomass heating and agricultural dust.
 								</li>
@@ -933,18 +1031,46 @@
 							</ul>
 						</p>
 
-						<h2 style="margin-bottom: 0.2em; font-size: 1.75em;">
+						<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 							<span style="color:#666; font-weight:400;">Results</span> —
 							<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 8</span>
 						</h2>
 
-						PUT PIE CHARTS HERE
+						<div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; max-width: 1200px; margin: 20px auto; font-family: inherit;">
 
-						<h2 style="margin-bottom: 0.2em; font-size: 1.75em;">
+							<div style="flex: 1; text-align: center;">
+								<img src="..\images\Step_8-Chart_pm10.png" style="width: 80%; height: auto; border-radius: 4px;" alt="PM10">
+								<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">PM10</strong>
+							</div>
+
+							<div style="flex: 1; text-align: center;">
+								<img src="..\images\Step_8-Chart_pm2p5.png" style="width: 80%; height: auto; border-radius: 4px;" alt="PM2.5">
+								<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">PM2.5</strong>
+							</div>
+
+							<div style="flex: 1; text-align: center;">
+								<img src="..\images\Step_8-Chart_no2.png" style="width: 80%; height: auto; border-radius: 4px;" alt="NO2">
+								<strong style="color:#516E89; display: block; margin-top: 10px; font-family: inherit;">NO2</strong>
+							</div>
+
+						</div>
+
+						<h2 style="margin-bottom: 20px; font-size: 1.75em;">
 							<span style="color:#666; font-weight:400;">Analysis</span> —
 							<span style="color:#a56365; font-weight:100; font-style:italic;"> Step 8</span>
 						</h2>
-						
+
+						<ul style="list-style: disc; padding-left: 1.25em; text-align: justify; margin-bottom: 50px;">
+							<li style="margin-bottom: 0.5em;">
+								<strong style="color:#516E89;">PM10</strong>: the vast majority of Croatia's population (<strong>80.3%</strong>) is exposed to moderate PM10 concentrations, falling within <strong style="color:#EEC925;">Class 2</strong>.
+							</li>
+							<li style="margin-bottom: 0.5em;">
+								<strong style="color:#516E89;">PM2.5</strong>: presents a more concerning picture, with <strong>80.5%</strong> of the population exposed to <strong style="color:#FF7B00;">Class 3</strong> concentrations.
+							</li>
+							<li>
+								<strong style="color:#516E89;">NO2</strong>: remains largely below critical thresholds, with <strong>68.4%</strong> of the population exposed to <strong style="color:#6A951F;">Class 1</strong> concentrations only.
+							</li>
+						</ul>
 					</div>
 				</header>
 			</section>

@@ -682,6 +682,10 @@
 
 /* CLARA  */
 
+.custom-header {
+    padding-bottom: 0px !important;
+}
+
 .title-centered {
     text-align: center;
 }
@@ -696,7 +700,10 @@
 
 table {
     border-collapse: collapse; /* Merges borders to avoid the “double line” effect */
-    width: 100%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.95rem;
 }
 
 /* Table headers and cells */
@@ -735,7 +742,6 @@ table td:nth-child(-n+3) {
     text-align: center;
     vertical-align: middle;
 }
-
 
 /* ---------------- Concentration level table ----------------*/
 .conc-table {
@@ -777,7 +783,7 @@ table td:nth-child(-n+3) {
 .badge {
     display: inline-block;
     color: #ffffff;
-    padding: 4px 10px;
+    padding: 0px 10px;
     border-radius: 8px;
     font-size: 0.9em;
 }
@@ -788,7 +794,7 @@ table td:nth-child(-n+3) {
 .zonal-stats-table {
     border-collapse: collapse;
     background-color: #ffffff;
-    width: calc(75% - 40px); 
+    width: 40%; 
     margin: 20px auto;
 }
 
@@ -796,7 +802,7 @@ table td:nth-child(-n+3) {
 .zonal-stats-table th, 
 .zonal-stats-table td {
     border: 1px solid #bdc3c7;
-    padding: 7px 15px;
+    padding: 2px 15px;
     vertical-align: top;
 }
 
@@ -824,17 +830,45 @@ table td:nth-child(-n+3) {
 }
 
 /* Specific background colors for different statuses */
-.zonal-stats-table .class-stable {
-    background-color: #EEC925;
-    color: #ffffff !important;
-}
-
 .zonal-stats-table .class-gain {
     background-color: #6A951F;
     color: #ffffff !important;
+    font-weight: normal;
 }
+
+.zonal-stats-table .class-gain-1st {
+    background-color: #88B045;
+    font-weight: normal;
+}
+
+.zonal-stats-table .class-gain-2nd {
+    background-color: #A2C568;
+    font-weight: normal;
+}
+
+.zonal-stats-table .class-gain-3rd {
+    background-color: #A2C568;
+    font-weight: normal;
+}
+
 
 .zonal-stats-table .class-loss {
     background-color: #FF7B00;
     color: #ffffff !important;
+    font-weight: normal;
+}
+
+.zonal-stats-table .class-loss-1st {
+    background-color: #FFAE66;
+    font-weight: normal;
+}
+
+.zonal-stats-table .class-loss-2nd {
+    background-color: #FFC58D;
+    font-weight: normal;
+}
+
+.zonal-stats-table .class-loss-3rd {
+    background-color: #FFE0B3;
+    font-weight: normal;
 }
