@@ -180,13 +180,9 @@
     margin-right: 10px;
 }
 /* Legend title */
-.legend-title {
+#legend summary {
     font-size: 20px;
-    text-align: center;
-    padding: 3px;
-    display: block;
     color: #384959;
-    margin-bottom: 3pt;
 }
 /* Legend image */
 .legend-img {
