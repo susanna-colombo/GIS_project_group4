@@ -199,6 +199,23 @@
 .ol-layerswitcher li label span {
     font-size: 14px !important;
 }
+li.ol-layer-group:not(.ol-layer) > .li-content input[type="checkbox"] {
+    display: none;
+}
+li.ol-layer-group:not(.ol-layer) > .li-content label{
+    pointer-events: none;
+}
+li.ol-layer-group:not(.ol-layer) > .li-content label::before {
+/* .ol-layer-group .li-content > label::before { */
+    display: none;
+}
+li.ol-layer-group:not(.ol-layer) > .li-content label::after {
+/* .ol-layer-group .li-content > label::after { */
+    display: none;
+}
+li.ol-layer-group:not(.ol-layer) > .li-content .layerswitcher-opacity {
+    display: none;
+}
 
 /* Scale line */
 .ol-scale-line-inner {

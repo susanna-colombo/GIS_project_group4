@@ -496,7 +496,6 @@ for(let layer of allLayers){
 // create function to enable single selection for layer groups
 function enableSingleLayerSelection(layerGroup) {
   const layers = layerGroup.getLayers().getArray();
-
   layers.forEach(layer => {
     layer.on('change:visible', function () {
       if (layer.getVisible()) {
