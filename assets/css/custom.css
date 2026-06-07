@@ -474,11 +474,23 @@ li.ol-layer-group:not(.ol-layer) > .li-content .layerswitcher-opacity {
 
 /* ── Content panel ─────────────────────────────── */
 .accordion-panel {
-    width: 1200px;
+    width: 1680px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.3s ease;
     padding: 0 auto;
+}
+
+@media screen and (max-width: 1680px) {
+    .accordion-panel {
+        width: 1200px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .accordion-panel {
+        width: 960px;
+    }
 }
 
 .accordion-item.is-open .accordion-panel {
