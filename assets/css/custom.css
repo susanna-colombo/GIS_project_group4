@@ -897,3 +897,81 @@ table td:nth-child(-n+3) {
     background-color: #FFE0B3;
     font-weight: normal;
 }
+
+
+.region-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.region-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.region-name {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.city-list {
+    list-style: decimal;
+    padding-left: 1.2rem;
+    margin: 0;
+    text-align: left;
+}
+
+.city-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.city-pop {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.city-list {
+    list-style: none;
+    counter-reset: city-counter;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.city-list li {
+    counter-increment: city-counter;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.city-list li::before {
+    content: counter(city-counter) ".";
+    font-weight: bold;
+    color: #ae8894;
+    font-size: 1.1em;
+    margin-right: 0.4rem;
+}
+
+
+.neighbors-table {
+    width: 80%;
+    margin-bottom: 2rem;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.neighbors-table th,
+.neighbors-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    line-height: 1.5;
+}
+
+.neighbors-table th {
+    font-weight: bold;
+    text-align: center;
+}
+
