@@ -695,7 +695,7 @@ li.ol-layer-group:not(.ol-layer) > .li-content .layerswitcher-opacity {
 }
 
 .table-line {
-    line-height: 1.4;
+    line-height: 1.7;
 }
 
 
@@ -831,8 +831,9 @@ table td:nth-child(-n+3) {
 .zonal-stats-table {
     border-collapse: collapse;
     background-color: #ffffff;
-    width: 40%; 
+    width: 70%; 
     margin: 20px auto;
+    border: 2px solid #bdc3c7;
 }
 
 /* Table header and cells */
@@ -841,6 +842,29 @@ table td:nth-child(-n+3) {
     border: 1px solid #bdc3c7;
     padding: 2px 15px;
     vertical-align: top;
+}
+
+.zonal-stats-table th[colspan="2"] {
+    border-left: 2px solid #bdc3c7;
+    border-right: 2px solid #bdc3c7;
+}
+
+.zonal-stats-table td:nth-child(2),
+.zonal-stats-table td:nth-child(4),
+.zonal-stats-table td:nth-child(6),
+.zonal-stats-table th:nth-child(1),
+.zonal-stats-table th:nth-child(3),
+.zonal-stats-table th:nth-child(5) {
+    border-left: 2px solid #bdc3c7;
+}
+
+.zonal-stats-table td:nth-child(3),
+.zonal-stats-table td:nth-child(5),
+.zonal-stats-table td:nth-child(7),
+.zonal-stats-table th:nth-child(2),
+.zonal-stats-table th:nth-child(4),
+.zonal-stats-table th:nth-child(6) {
+    border-right: 2px solid #bdc3c7;
 }
 
 /* Table header */

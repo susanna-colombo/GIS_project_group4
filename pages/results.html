@@ -730,7 +730,7 @@
 			<header class="custom-header">
 				<div class="container">
 					
-					<h2><strong>Land use-pollutants correlation</strong> — <i style="color:#a56365; font-weight:100; font-style:italic;">Steps 5 & 6</i></h2>
+					<h2><strong>Land use - pollutants correlation</strong> — <i style="color:#a56365; font-weight:100; font-style:italic;">Steps 5 & 6</i></h2>
 				
 					<p style="text-align: justify;">
 						This section examines the spatial correlation between <strong>land cover changes</strong> and <strong>pollutant concentration shifts</strong> in Croatia from 2021 to 2023 to analyze how land use directly impacts air quality.
@@ -739,220 +739,159 @@
 					<!-- Step 5 -->
 					<p class="section-label" style="margin-top: 3rem; margin-bottom: 1.5rem;">Results & Analysis: Step 5</p>
 
-					<img src="..\images\Step_5-LandCoverChange.png" style="width: 50%; height: auto; border-radius: 4px; cursor:pointer" alt="Land Cover Change" onclick="document.getElementById('lightbox-lcc').classList.add('active')">
+					<img src="..\images\Step_5-LandCoverChange.png" style="width: 60%; height: auto; border-radius: 4px; cursor:pointer" alt="Land Cover Change" onclick="document.getElementById('lightbox-lcc').classList.add('active')">
 
 					<div id="lightbox-lcc" class="lightbox-overlay" onclick="this.classList.remove('active')">
 						<img src="../images/Step_5-LandCoverChange.png" alt="Land Cover Change">
 					</div>
 
 					<p style="text-align: justify; margin-bottom: 20px;">
-						However, we cannot extract a lot of information from it. That is why we are using the <strong>zonal statistics</strong> derived from the <strong style="color:#AE8894;">Step 6</strong> for further and more interesting analysis.
+						The map above illustrates the land cover changes that occurred across Croatia between 2021 and 2023, 
+						where each color represents a transition from one cover type to another, or the absence of change. 
+						Our analysis focuses on three land cover categories particularly relevant to air quality dynamics: 
+						<strong>trees</strong>, <strong>crops</strong>, and <strong>built-up areas</strong>. For each of these categories, 
+						we identified the <strong>three main sources of gain and loss</strong> in coverage, in order to better understand 
+						which land transitions may be driving the pollution patterns observed in our results.
+					</p>	
+
+					<table class="zonal-stats-table" style="margin-bottom: 30px;">
+						<thead>
+							<tr>
+								<th rowspan="2" style="width: 120px; vertical-align: middle">Indicator</th>
+								<th colspan="2">Trees</th>
+								<th colspan="2">Crops</th>
+								<th colspan="2">Built areas</th>
+							</tr>
+							<tr>
+								<th>Value (%)</th>
+								<th>Category</th>
+								<th>Value (%)</th>
+								<th>Category</th>
+								<th>Value (%)</th>
+								<th>Category</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="width: 200px;"><strong>Stability (Persistence)</strong></td>
+								<td>97.2</td>
+								<td>n/a</td>
+								<td>94.2</td>
+								<td>n/a</td>
+								<td>92.0</td>
+								<td>n/a</td>
+							</tr>
+							<tr>
+								<td class="class-cell class-gain" colspan="7">Sources of gain (top 3)</td>
+							</tr>
+							<tr>
+								<td class="class-cell class-gain-1st">1st</td>
+								<td>73.5</td>
+								<td>Rangeland</td>
+								<td>39.0</td>
+								<td>Rangeland</td>
+								<td>45.0</td>
+								<td>Crops</td>
+							</tr>
+							<tr>
+								<td class="class-cell class-gain-2nd">2nd</td>
+								<td>18.6</td>
+								<td>Crops</td>
+								<td>37.9</td>
+								<td>Trees</td>
+								<td>30.3</td>
+								<td>Rangeland</td>
+							</tr>
+							<tr>
+								<td class="class-cell class-gain-3rd">3rd</td>
+								<td>5.2</td>
+								<td>Built Area</td>
+								<td>21.7</td>
+								<td>Built Area</td>
+								<td>23.2</td>
+								<td>Trees</td>
+							</tr>
+							<tr>
+								<td class="class-cell class-loss" colspan="7">Destinations of loss (top 3)</td>
+							</tr>
+							<tr>
+								<td class="class-cell class-loss-1st">1st</td>
+								<td>63.8</td>
+								<td>Rangeland</td>
+								<td>44.7</td>
+								<td>Rangeland</td>
+								<td>39.9</td>
+								<td>Crops</td>
+							</tr>
+							<tr>
+								<td class="class-cell class-loss-2nd">2nd</td>
+								<td>21.4</td>
+								<td>Crops</td>
+								<td>39.2</td>
+								<td>Trees</td>
+								<td>34.0</td>
+								<td>Crops</td>
+							</tr>
+							<tr>
+								<td class="class-cell class-loss-3rd">3rd</td>
+								<td>7.2</td>
+								<td>Built Area</td>
+								<td>14.7</td>
+								<td>Built Area</td>
+								<td>24.5</td>
+								<td>Rangeland</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p style="text-align: justify; margin-bottom: 0rem;">	
+						The percentages shown in the table represent the <strong>share of pixels</strong> that transitioned from one land cover 
+						type to another between 2021 and 2023. For each category (trees, crops, and built-up areas) all pixels were first 
+						classified as either stable (unchanged), gained, or lost. The sources of gain are then calculated as the percentage of 
+						each incoming transition relative to the total number of pixels gained and analogously for loss destinations. In other 
+						words, they answer the question: <em>among all the pixels that became X, where did they come from?</em> And <em>among 
+						all the pixels that were X and disappeared, what did they turn into?</em>
 					</p>
 
 					<!-- Step 6 -->
 					<p class="section-label" style="margin-top: 3rem; margin-bottom: 1.5rem;">Results & Analysis: Step 6</p>
+						<p style="text-align: justify; margin-bottom: 20px;">	
+						Knowing that a land cover changed is not enough, the key question is whether that change had a measurable effect on 
+						pollutant concentrations. The binary mask isolates three spatially distinct zones: areas where the land cover remained 
+						stable (baseline), areas where it was gained, and areas where it was lost. By overlaying these zones with the 
+						<strong>net change in pollutant concentration</strong> between 2021 and 2023, the zonal statistics allow us to compare 
+						how pollution evolved differently across these three categories. The resulting bar chart therefore shows whether areas 
+						that gained a certain land cover type experienced a different pollution trend compared to areas where it 
+						disappeared, making the <strong>link between land use change and air quality variation</strong> spatially explicit 
+						and quantifiable. Our analysis focuses on three pairs chosen for their environmental relevance: <strong>PM10 and 
+							Trees</strong>, <strong>PM2.5 and Crops</strong>, and <strong>NO2 and Built Area</strong>.
+					</p>
 
 					<ul style="list-style: disc; padding-left: 1.25em; text-align: left; margin-bottom: 0 !important;">
 						<li style="margin-bottom: 0.5em;">
-							<strong style="color:#516E89;">PM10</strong>:
-
-							<table class="zonal-stats-table" style="margin-bottom: 30px;">
-								<thead>
-									<tr>
-										<th>Indicator</th>
-										<th>Value <br>(%)</th>
-										<th>Category</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><strong>Stability (Persistence)</strong></td>
-										<td>97.2</td>
-										<td>n/a</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain">Sources of gain (top 3)</td>
-										<td class="class-cell class-gain"></td>
-										<td class="class-cell class-gain"></td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain-1st">1st</td>
-										<td>73.5</td>
-										<td>Rangeland</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain-2nd">2nd</td>
-										<td>18.6</td>
-										<td>Crops</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain-3rd">3rd</td>
-										<td>5.2</td>
-										<td>Built Area</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss">Destinations of loss (top 3)</td>
-										<td class="class-cell class-loss"></td>
-										<td class="class-cell class-loss"></td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss-1st">1st</td>
-										<td>63.8</td>
-										<td>Rangeland</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss-2nd">2nd</td>
-										<td>21.4</td>
-										<td>Crops</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss-3rd">3rd</td>
-										<td>7.2</td>
-										<td>Built Area</td>
-									</tr>
-								</tbody>
-							</table>
-
+							<strong style="color:#516E89;">PM10 & Trees</strong>:
 							<div style="display: flex; align-items: center; gap: 20px; width: 100%; margin-bottom: 40px;">
 								<img src="..\images\ZS_pm10.png" style="width: 40%; height: auto; flex-shrink: 0;" alt="Zonal Statistics PM10">
 								<div style="flex: 1;">
-									<h3 class="title-centered">Trees</h3>
 									<p>The <strong>near-identical values</strong> across all three zones suggest that tree cover change has limited direct influence on PM10 concentrations.</p>
 								</div>
 							</div>
 						</li>
 						<li style="margin-bottom: 0.5em;">
-							<strong style="color:#516E89;">PM2.5</strong>:
-							
-							<table class="zonal-stats-table" style="margin-bottom: 30px;">
-								<thead>
-									<tr>
-										<th>Indicator</th>
-										<th>Value <br>(%)</th>
-										<th>Category</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><strong>Stability (Persistence)</strong></td>
-										<td>94.2</td>
-										<td>n/a</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain">Sources of gain (top 3)</td>
-										<td class="class-cell class-gain"></td>
-										<td class="class-cell class-gain"></td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain-1st">1st</td>
-										<td>39.0</td>
-										<td>Rangeland</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain-2nd">2nd</td>
-										<td>37.9</td>
-										<td>Trees</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain-3rd">3rd</td>
-										<td>21.7</td>
-										<td>Built Area</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss">Destinations of loss (top 3)</td>
-										<td class="class-cell class-loss"></td>
-										<td class="class-cell class-loss"></td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss-1st">1st</td>
-										<td>44.7</td>
-										<td>Rangeland</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss-2nd">2nd</td>
-										<td>39.2</td>
-										<td>Trees</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss-3rd">3rd</td>
-										<td>14.7</td>
-										<td>Built Area</td>
-									</tr>
-								</tbody>
-							</table>
-
+							<strong style="color:#516E89;">PM2.5 & Crops</strong>:
 							<div style="display: flex; align-items: center; flex-direction: row-reverse; gap: 20px; width: 100%; margin-bottom: 40px;">
 								<img src="..\images\ZS_pm2p5.png" style="width: 40%; height: auto; flex-shrink: 0;" alt="Zonal Statistics PM2.5">
 								<div style="flex: 1;">
-									<h3 class="title-centered">Crops</h3>
 									<p>Areas where cropland was lost experienced the <strong>highest improvement</strong> in PM2.5 concentrations.</p>
 								</div>
 							</div>
 						</li>
 						<li>
-							<strong style="color:#516E89;">NO2</strong>:
-							
-							<table class="zonal-stats-table" style="margin-bottom: 30px;">
-								<thead>
-									<tr>
-										<th>Indicator</th>
-										<th>Value <br>(%)</th>
-										<th>Category</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><strong>Stability (Persistence)</strong></td>
-										<td>92.0</td>
-										<td>n/a</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain">Sources of gain (top 3)</td>
-										<td class="class-cell class-gain"></td>
-										<td class="class-cell class-gain"></td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain-1st">1st</td>
-										<td>45.0</td>
-										<td>Crops</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain-2nd">2nd</td>
-										<td>30.3</td>
-										<td>Rangeland</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-gain-3rd">3rd</td>
-										<td>23.2</td>
-										<td>Trees</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss">Destinations of loss (top 3)</td>
-										<td class="class-cell class-loss"></td>
-										<td class="class-cell class-loss"></td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss-1st">1st</td>
-										<td>39.9</td>
-										<td>Crops</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss-2nd">2nd</td>
-										<td>34.0</td>
-										<td>Crops</td>
-									</tr>
-									<tr>
-										<td class="class-cell class-loss-3rd">3rd</td>
-										<td>24.5</td>
-										<td>Rangeland</td>
-									</tr>
-								</tbody>
-							</table>
+							<strong style="color:#516E89;">NO2 & Built Area</strong>:
 
 							<div style="display: flex; align-items: center; gap: 20px; width: 100%; padding-bottom: 40px; margin-bottom: 0 !important;">
 								<img src="..\images\ZS_no2.png" style="width: 40%; height: auto; flex-shrink: 0;" alt="Zonal Statistics NO2">
 								<div style="flex: 1;">
-									<h3 class="title-centered">Built Areas</h3>
 									<p>Areas where built-up cover expanded between 2021 and 2023 is affected by the <strong>smallest reduction</strong> in NO2 concentrations.</p>
 								</div>
 							</div>

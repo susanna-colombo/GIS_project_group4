@@ -117,7 +117,7 @@
 							</div>
 
 							<!-- Processing Steps -->
-							<p style="text-align: left; margin-top: 1rem;"><strong>Processing Steps</strong></p>
+							<p style="text-align: left; margin-top: 1rem;"><strong>Processing Flow</strong></p>
 							<ol style="text-align: left;">
 								<li><strong>Aggregating hourly data for December 2023 —</strong> The hourly data for December 2023 was temporally averaged 
 									across the full month to produce a single monthly mean raster per pollutant, then exported as GeoTIFF.</li>
@@ -137,11 +137,12 @@
 							<p style="text-align: left; margin-top: 0rem;">
 								The following output files are produced for each pollutant (NO₂, PM2.5, PM10).
 							</p>
-							<table class="results-table">
+							<table class="results-table" style="margin-bottom: 2rem;">
 								<thead>
 									<tr>
 										<th>#</th>
 										<th>File</th>
+										<th>Step</th>
 										<th>Description</th>
 									</tr>
 								</thead>
@@ -149,27 +150,32 @@
 									<tr>
 										<td>1</td>
 										<td><code>croatia_CAMS_&lt;pollutant&gt;_2023_12.tif</code></td>
-										<td>Monthly mean concentration raster for December 2023, clipped to Croatia</td>
+										<td>1</td>
+										<td class="table-line">Monthly mean concentration raster for December 2023, clipped to Croatia</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td><code>croatia_average_&lt;pollutant&gt;_2023.tif</code></td>
-										<td>Annual mean raster computed by averaging the 12 monthly layers for 2023</td>
+										<td>2</td>
+										<td class="table-line">Annual mean raster computed by averaging the 12 monthly layers for 2023</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td><code>croatia_&lt;pollutant&gt;_concentration_map_2023.tif</code></td>
-										<td>Annual mean reclassified into 5 concentration classes following EU air quality limit values</td>
+										<td>3</td>
+										<td class="table-line">Annual mean reclassified into 5 concentration classes following EU air quality limit values</td>
 									</tr>
 									<tr>
 										<td>4</td>
 										<td><code>croatia_&lt;pollutant&gt;_2021_2023_AMAC_map.tif</code></td>
-										<td>Difference raster (2023 − 2021) showing spatiotemporal change in concentration</td>
+										<td>4</td>
+										<td class="table-line">Difference raster (2023 − 2021) showing spatiotemporal change in concentration</td>
 									</tr>
 									<tr>
 										<td>5</td>
 										<td><code>croatia_&lt;pollutant&gt;_2021_2023_AMAC_map.qml</code></td>
-										<td>QGIS style file for the AMAC map, defining the diverging colour ramp and class breaks</td>
+										<td>4</td>
+										<td class="table-line">QGIS style file for the AMAC map, defining the diverging colour ramp and class breaks</td>
 									</tr>
 								</tbody>
 							</table>
@@ -218,7 +224,7 @@
 							<p style="margin-top: 0.1rem; font-size: 0.85rem; color: #999; font-style: italic; letter-spacing: 0.02em;">
 									Fig. 2 — The 2 land cover tiles downloaded from the ESRI Living Atlas, covering the Croatian territory.</p>
 
-							<p style="text-align: left;  margin-top: 1rem;"><strong>Processing Steps</strong></p>
+							<p style="text-align: left;  margin-top: 1rem;"><strong>Processing Flow</strong></p>
 							<ol style="text-align: left;">
 								<li>
 									<strong>Download and load the GeoTIFF tiles —</strong>
@@ -256,11 +262,12 @@
 							<p style="text-align: left; margin-top: 1rem;"><strong>Results</strong></p>
 							<p style="text-align: left; margin-top: 0rem;">The following output files are produced for each pollutant (NO₂, PM2.5, PM10).</p>
 
-							<table class="results-table">
+							<table class="results-table" style="margin-bottom: 2rem;">
 								<thead>
 									<tr>
 										<th>#</th>
 										<th>File</th>
+										<th>Step</th>
 										<th>Description</th>
 									</tr>
 								</thead>
@@ -268,22 +275,26 @@
 									<tr>
 										<td>1</td>
 										<td><code>croatia_LCC_2021_2023.tif</code></td>
-										<td>Land cover change raster encoding 2021→2023 transitions as unique class codes</td>
+										<td>5</td>
+										<td class="table-line">Land cover change raster encoding 2021→2023 transitions as unique class codes</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>Statistical table</td>
-										<td>Summary statistics of pollutant concentration per land cover change class, implemented directly in the website</td>
+										<td>5</td>
+										<td class="table-line">Summary statistics of pollutant concentration per land cover change class, implemented directly in the website</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td><code>croatia_&lt;pollutant&gt;_zonal_statistics_2021_2023.gpkg</code></td>
-										<td>Vector layer with zonal statistics (mean, min, max) per land cover change class for each pollutant</td>
+										<td>6</td>
+										<td class="table-line">Vector layer with zonal statistics (mean, min, max) per land cover change class for each pollutant</td>
 									</tr>
 									<tr>
 										<td>4</td>
 										<td>Charts</td>
-										<td>Figures showing pollutant distribution per land cover change class, implemented directly in the website</td>
+										<td>6</td>
+										<td class="table-line">Figures showing pollutant distribution per land cover change class, implemented directly in the website</td>
 									</tr>
 								</tbody>
 							</table>
@@ -344,7 +355,7 @@
 								Fig. 4 — Croatia administrative boundaries (GAUL Level 2).
 							</p>
 							
-							<p style="text-align: left; margin-top: 1rem;"><strong>Processing Steps</strong></p>
+							<p style="text-align: left; margin-top: 1rem;"><strong>Processing Flow</strong></p>
 							<ol style="text-align: left;">
 								<li>
 									<strong>Preprocessing: reset NoData values —</strong>
@@ -395,6 +406,7 @@
 									<tr>
 										<th>#</th>
 										<th>File</th>
+										<th>Step</th>
 										<th>Description</th>
 									</tr>
 								</thead>
@@ -402,21 +414,25 @@
 									<tr>
 										<td>1</td>
 										<td><code>croatia_&lt;pollutant&gt;_2023_bivariate.gpkg</code></td>
+										<td>7</td>
 										<td class="table-line">Vector layer with zonal statistics containing population class (median), pollution class (max) and bivariate classification attributes per administrative zone</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>Bivariate map & legend</td>
+										<td>7</td>
 										<td class="table-line">Interactive bivariate map showing the spatial relationship between population density and pollution levels, implemented directly in the website</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td><code>croatia_&lt;pollutant&gt;_2023_chart.gpkg</code></td>
+										<td>8</td>
 										<td class="table-line">Dissolved vector layer (max 5 features) with population sum and pollution class per zone, used as input for the pie chart</td>
 									</tr>
 									<tr>
 										<td>4</td>
 										<td>Pie chart</td>
+										<td>8</td>
 										<td class="table-line">Chart showing the percentage of Croatian population exposed to each pollution concentration level, implemented directly in the website</td>
 									</tr>
 								</tbody>
