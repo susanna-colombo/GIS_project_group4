@@ -1,0 +1,519 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Workflow</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" crossorigin href="/GIS_project_group4/assets/custom-99ealQ5y.css">
+	</head>
+	<body class="is-preload">
+		<!-- Header -->
+		<section id="header" class="dark workflow-hd">
+
+			<header style="width:100%; text-align:center;">
+				<h1>Workflow</h1>
+				<p>The processing pipeline integrating air quality, land cover and population data</p>
+
+				<nav id="nav" style="text-align:center; margin-top:30px;">
+					<a href="../index.html" style="color:white; margin:0 20px;">HOME</a>
+					<span style="color:white;"> | </span>
+					<a href="results.html" style="color:white; margin:0 20px;">Results</a>
+					<span style="color:white;"> | </span>
+					<a href="webgis.html" style="color:white; margin:0 20px;">WebGIS</a>
+				</nav>
+			</header>
+
+		</section>
+
+		
+		<!-- First -->
+		<section id="first" class="main">
+			<header>
+				<div class="container">
+
+					<!-- Title -->
+					<h2>Our Methodology</h2>
+					<div style="display: grid; grid-template-columns: 4fr 2fr; gap: 2rem; align-items: start; margin-bottom: 1.5rem;">
+
+					<!-- Left: text -->
+						<div>
+							<p style="text-align: left;">This project follows a multi-source geospatial workflow, integrating 
+								atmospheric, land cover, and demographic data to investigate how environmental changes relate to air quality and 
+								human exposure in Croatia. All data are freely available through open platforms, and processing was 
+								carried out using standard GIS techniques in QGIS.</p>
+							<p style="text-align: left; margin-bottom: 25px;">
+								The analysis is structured in four main steps: acquiring and processing air pollution data from CAMS, mapping land 
+								cover transitions using the ESRI Annual Land Cover dataset, overlaying population distribution data, and finally 
+								combining all layers to identify spatial patterns and exposure hotspots.</p>
+						</div>
+
+					<!-- Right: feature cards -->
+						<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 2rem;">
+							<div class="feature-card feature-card--study">
+								<p class="feature-card-title">Study area</p>
+								<p class="feature-card-content">Croatia — national scale with counties breakdown</p>
+							</div>
+
+							<div class="feature-card feature-card--time">
+								<p class="feature-card-title">Time period</p>
+								<p class="feature-card-content">Year 2021 – 2023</p>
+							</div>
+
+							<div class="feature-card feature-card--pollutants">
+								<p class="feature-card-title">Pollutants</p>
+								<p class="feature-card-content">NO₂, PM2.5 and PM10</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- List -->
+				<ul class="accordion-list">
+
+					<!-- First: pollution data -->
+					<li class="accordion-item">
+						<button class="accordion-trigger" aria-expanded="false">
+							<span class="accordion-arrow">
+								<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+							</span>
+							<span class="step-badge">1</span>
+							<span class="step-title">Pollution Concentration Analysis</span>
+						</button>
+
+						<div class="accordion-panel">
+							<!-- Introduction Paragraph -->
+							<p style="text-align: justify;">
+								The core objective of this section is to anlayze the evolution of concentration of NO₂, PM2.5 and PM10,
+								in the years 2021 and 2023. The data used goes from 
+									<strong><a href="https://ads.atmosphere.copernicus.eu/datasets/cams-europe-air-quality-reanalyses?tab=overview" target="_blank">
+											CAMS European Air Quality Reanalysis</a></strong>
+								(Copernicus Atmosphere Monitoring Service), a high-resolution dataset (~10 km) built on an ensemble of eleven 
+								air quality assimilation models across Europe. The website provides hourly concentration values for
+								multiple pollutants, with a temporal coverage from 2013 to 2025.
+							</p>
+
+							<!-- Data Sources -->
+							<p style="text-align: justify;"><strong>Data Sources</strong><br>
+								Two types of CAMS data were used: <strong>hourly data for December 2023</strong>, downloaded as raw NetCDF 
+								files directly from the CAMS portal using validated reanalysis and ensemble median values; and <strong>monthly 
+								aggregated GeoTIFFs</strong>, covering all 12 months of 2021 and the remaining 11 months of 2023 for the 
+								three pollutants, provided by the course professors.
+							</p>
+
+							<!-- Image -->
+							<div style="margin-top: 1.5rem; text-align: center;">
+								<img src="/GIS_project_group4/assets/pollution_map_03-D5ulH0n-.png"
+									alt="Pollutant map of Europe"
+									style="max-width: 60%; cursor: zoom-in;"
+									onclick="document.getElementById('lightbox-pollutant').classList.add('active')" />
+								<p style="margin-top: 0.1rem; font-size: 0.85rem; color: #999; font-style: italic; letter-spacing: 0.02em;">
+									Fig. 1 — CAMS Monthly mean concentration of PM2.5 for the month 03 - 2021.
+								</p>
+							</div>
+
+							<div id="lightbox-pollutant" class="lightbox-overlay" onclick="this.classList.remove('active')">
+								<img src="/GIS_project_group4/assets/pollution_map_03-D5ulH0n-.png" alt="Pollutant map of Europe">
+							</div>
+
+							<!-- Processing Steps -->
+							<p style="text-align: left; margin-top: 1rem;"><strong>Processing Flow</strong></p>
+							<ol style="text-align: left;">
+								<li><strong>Aggregating hourly data for December 2023 —</strong> The hourly data for December 2023 was temporally averaged 
+									across the full month to produce a single monthly mean raster per pollutant, then exported as GeoTIFF.</li>
+								<li><strong>Clipping to the area of interest —</strong> All monthly layers were clipped to the Croatian 
+									national boundary. A pixel misalignment was detected between the December 2023 raster and the other
+									provided layers and resolved by realigning all rasters onto a common grid before clipping.</li>
+								<li><strong>Yearly aggregation and concentration classification —</strong> The 12 monthly rasters for each 
+									year were averaged to produce annual mean maps for 2021 and 2023, then reclassified into five concentration
+										classes following EU air quality limit values.</li>
+								<li><strong>Spatiotemporal trend analysis (2021–2023) —</strong> A difference map was computed for each 
+									pollutant (2023 − 2021) to visualise how concentrations evolved over the period, highlighting areas 
+									of improvement and zones where pollution increased.</li>
+							</ol>
+
+							<!-- Result table -->
+							<p style="text-align: left; margin-top: 1rem;"><strong>Results</strong></p>
+							<p style="text-align: left; margin-top: 0rem;">
+								The following output files are produced for each pollutant (NO₂, PM2.5, PM10).
+							</p>
+							<table class="results-table" style="margin-bottom: 2rem;">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>File</th>
+										<th>Step</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td><code>croatia_CAMS_&lt;pollutant&gt;_2023_12.tif</code></td>
+										<td>1</td>
+										<td class="table-line">Monthly mean concentration raster for December 2023, clipped to Croatia</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td><code>croatia_average_&lt;pollutant&gt;_2023.tif</code></td>
+										<td>2</td>
+										<td class="table-line">Annual mean raster computed by averaging the 12 monthly layers for 2023</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td><code>croatia_&lt;pollutant&gt;_concentration_map_2023.tif</code></td>
+										<td>3</td>
+										<td class="table-line">Annual mean reclassified into 5 concentration classes following EU air quality limit values</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td><code>croatia_&lt;pollutant&gt;_2021_2023_AMAC_map.tif</code></td>
+										<td>4</td>
+										<td class="table-line">Difference raster (2023 − 2021) showing spatiotemporal change in concentration</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td><code>croatia_&lt;pollutant&gt;_2021_2023_AMAC_map.qml</code></td>
+										<td>4</td>
+										<td class="table-line">QGIS style file for the AMAC map, defining the diverging colour ramp and class breaks</td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+					</li>
+
+					<!-- Second: land use data -->
+					<li class="accordion-item">
+						<button class="accordion-trigger" aria-expanded="false">
+							<span class="accordion-arrow">
+								<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+							</span>
+							<span class="step-badge">2</span>
+							<span class="step-title">Land Cover Change Analysis</span>
+						</button>
+						<div class="accordion-panel">
+							<p style="text-align: justify; margin-bottom: 20px;">
+								To analyze how changes in land cover between 2021 and 2023 correlate with air pollutant
+								concentrations across Croatia, multi-temporal land cover data from the
+								<strong><a href="https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=12.49324%2C45.79424%2C5.17&mode=step&timeExtent=2017%2C2024&year=2023" target="_blank">
+										ESRI 10m Annual Land Cover dataset (ArcGIS Living Atlas of the World)</a></strong>
+									was combined with the CAMS Reanalysis pollutant data processed in the previous step. The following paragraph
+								describes the processing pipeline used in QGIS to prepare the data, detect land cover transitions 
+								and spatially correlate them with changes in pollutant concentration.
+							</p>
+
+							<div style="display: flex; gap: 3rem; margin-top: 1.5rem; justify-content: center;">
+								<img src="/GIS_project_group4/assets/land_cover_data_1-Bt-rP4OQ.png"
+									alt="Land cover data"
+									style="width: 25%; cursor: zoom-in;"
+									onclick="document.getElementById('lightbox-landcover-1').classList.add('active')" />
+								<img src="/GIS_project_group4/assets/land_cover_data_2-CjschIZ0.png"
+									alt="Land cover change"
+									style="width: 25%; cursor: zoom-in;"
+									onclick="document.getElementById('lightbox-landcover-2').classList.add('active')" />
+							</div>
+
+							<div id="lightbox-landcover-1" class="lightbox-overlay" onclick="this.classList.remove('active')">
+								<img src="/GIS_project_group4/assets/land_cover_data_1-Bt-rP4OQ.png" alt="Land cover data">
+							</div>
+
+							<div id="lightbox-landcover-2" class="lightbox-overlay" onclick="this.classList.remove('active')">
+								<img src="/GIS_project_group4/assets/land_cover_data_2-CjschIZ0.png" alt="Land cover change">
+							</div>
+							<p style="margin-top: 0.1rem; font-size: 0.85rem; color: #999; font-style: italic; letter-spacing: 0.02em;">
+									Fig. 2 — The 2 land cover tiles downloaded from the ESRI Living Atlas, covering the Croatian territory.</p>
+
+							<p style="text-align: left;  margin-top: 1rem;"><strong>Processing Flow</strong></p>
+							<ol style="text-align: left;">
+								<li>
+									<strong>Download and load the GeoTIFF tiles —</strong>
+									The ESRI 10m Annual Land Cover tiles covering Croatia were downloaded for both 2021
+									and 2023. All tiles overlapping the area of interest were selected and loaded into QGIS. In case of
+									Croatia 2 tiles were selected and reprojected to WGS84 (EPSG:4326).
+								</li>
+								<li>
+									<strong>Merging tiles into a single national layer —</strong>
+									Since Croatia spans multiple tiles, the reprojected rasters were merged into one national layer for each year. 
+									To reduce computational load, the rasters were previosly clipped to the Croatian boundary.
+								</li>
+								<li>
+									<strong>Land cover change detection —</strong>
+									A transition raster was computed as <code1>("LC_2021" * 100) + "LC_2023"</code1>, assigning each pixel a unique code
+									combining the 2021 and 2023 classes, explaining what land cover type it was originally and what it became.
+								</li>
+								<li>
+									<strong>Resampling the CAMS pollutant raster —</strong>
+									The CAMS Annual Mean Aggregation Change raster (~10 km/pixel) was resampled to match
+									the ESRI land cover resolution (~10 m/pixel).
+								</li>
+								<li>
+									<strong>Binary change mask —</strong>
+									In order to spatially correlate the pollutant concentrations with land cover changes, a binary mask was generated 
+									from the transition raster, classifying each pixel as Stable, Gain or Loss for the Built Area, Trees and Crops, class.
+								</li>
+								<li>
+									<strong>Studying pollution patterns —</strong>
+									The mask was vectorized (<em>Raster → Conversion → Polygonize</em>), dissolved by zone,
+									and used to compute meaningful statistics. 
+								</li>
+							</ol>
+							
+							<p style="text-align: left; margin-top: 1rem;"><strong>Results</strong></p>
+							<p style="text-align: left; margin-top: 0rem;">The following output files are produced for each pollutant (NO₂, PM2.5, PM10).</p>
+
+							<table class="results-table" style="margin-bottom: 2rem;">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>File</th>
+										<th>Step</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td><code>croatia_LCC_2021_2023.tif</code></td>
+										<td>5</td>
+										<td class="table-line">Land cover change raster encoding 2021→2023 transitions as unique class codes</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Statistical table</td>
+										<td>5</td>
+										<td class="table-line">Summary statistics of pollutant concentration per land cover change class, implemented directly in the website</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td><code>croatia_&lt;pollutant&gt;_zonal_statistics_2021_2023.gpkg</code></td>
+										<td>6</td>
+										<td class="table-line">Vector layer with zonal statistics (mean, min, max) per land cover change class for each pollutant</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Charts</td>
+										<td>6</td>
+										<td class="table-line">Figures showing pollutant distribution per land cover change class, implemented directly in the website</td>
+									</tr>
+								</tbody>
+							</table>
+
+
+						</div>
+					</li>
+
+					<!-- Third: population exposure -->
+					<li class="accordion-item">
+						<button class="accordion-trigger" aria-expanded="false">
+							<span class="accordion-arrow">
+								<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+							</span>
+							<span class="step-badge">3</span>
+							<span class="step-title">Population Exposure</span>
+						</button>
+						<div class="accordion-panel">
+							<p style="text-align: justify; margin-bottom: 20px"> 
+								The last step of the workflow focuses on assessing population exposure to air pollution across Croatia. 
+								The goal was to produce a bivariate map showing the spatial relationship between population density and 
+								pollution levels across Croatian administrative zones.
+							</p>
+
+							<p style="text-align: left;">
+								<strong>Data Sources</strong><br>
+								Two types of data were used in this step:
+							</p>
+
+							<ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+								<li>Croatia population data from <strong><a href="https://hub.worldpop.org/geodata/listing?id=135" target="_blank">
+										WorldPop</a></strong>
+										for the year 2023 at a 100m resolution (downloaded as a GeoTIFF)</li>
+								<li>Administrative provincial boundaries from the <strong><a href="https://www.fao.org/hih-geospatial-platform/news/detail/now-available--the-global-administrative-unit-layers-(gaul)-dataset---2024-edition/en" target="_blank">
+										FAO GAUL Level 2 dataset</a></strong> (downloaded as a GeoPackage)</li>
+							</ul>
+
+							<div style="display: flex; gap: 3rem; margin-top: 1.5rem; justify-content: center;">
+								<img src="/GIS_project_group4/assets/population_data-B_RzOOm6.png"
+									alt="Population data"
+									style="width: 40%; cursor: zoom-in;"
+									onclick="document.getElementById('lightbox-population').classList.add('active')" />
+								<img src="/GIS_project_group4/assets/GAUL_Croatia-Dr35fEQV.png"
+									alt="Administrative boundaries"
+									style="width: 40%; cursor: zoom-in;"
+									onclick="document.getElementById('lightbox-gaul').classList.add('active')" />
+							</div>
+
+							<div id="lightbox-population" class="lightbox-overlay" onclick="this.classList.remove('active')">
+								<img src="/GIS_project_group4/assets/population_data-B_RzOOm6.png" alt="Population data">
+							</div>
+
+							<div id="lightbox-gaul" class="lightbox-overlay" onclick="this.classList.remove('active')">
+								<img src="/GIS_project_group4/assets/GAUL_Croatia-Dr35fEQV.png" alt="Administrative boundaries">
+							</div>
+							<p style="margin-top: 0.1rem; font-size: 0.85rem; color: #999; font-style: italic; letter-spacing: 0.02em;">
+								Fig. 3 — Distribution of Croatia population in 2023 from WorldPop.                    
+								Fig. 4 — Croatia administrative boundaries (GAUL Level 2).
+							</p>
+							
+							<p style="text-align: left; margin-top: 1rem;"><strong>Processing Flow</strong></p>
+							<ol style="text-align: left;">
+								<li>
+									<strong>Preprocessing: reset NoData values —</strong>
+									Before reclassification, internal NoData pixels (value −99999) were reset to 0 and then the raster 
+									was re-clipped to the Croatian boundary to restore the NoData value outside the area of interest.
+								</li>
+								<li>
+									<strong>Population classes —</strong>
+									To classify the population into 5 classes, quantile boundaries were computed. Value 0 was treated as a 
+									separate class (class 1), so 4 additional quantile boundaries were needed. Then the population raster was 
+									reclassified into 5 classes using the quantile boundries, via 
+									<em>Processing Toolbox → Raster analysis → Reclassify by table</em>. Class 1 represents unpopulated or 
+									near-zero pixels, and class 5 the highest population density areas.
+								</li>
+								<li>
+									<strong>Download administrative boundaries (GAUL Level 2) —</strong>
+									The FAO GAUL Level 2 administrative boundaries for Croatia (county level) were
+									downloaded and extracted from the full dataset  and saved as a GeoPackage.
+								</li>
+								<li>
+									<strong>Zonal statistics per administrative zone —</strong>
+									Using <em>Processing Toolbox → Zonal Statistics</em>, two rounds of statistics were computed on the 
+									GAUL L2 layer: first, the median of the population quantile raster; then, using the output of
+									the first run as input, the maximum of each pollutant concentration class raster.
+								</li>
+								<li>
+									<strong>Compute bivariate classes —</strong>
+									To visualize the relationship between population density and pollution levels, a bivariate 
+									classification was created by combining the two previous outputs, with the expression 
+										<code>"pollution_class_max" * 10 + "population_class_median"</code>. This encodes each zone with a  
+									unique two-digit code combining the pollution and population class.
+									Then a predefined QML style was applied to the vector layer to display the bivariate classification. 
+									The resulting map highlights zones with simultaneous high pollution and high population density. 
+								</li>
+								<li>
+									<strong>Pie chart of population exposure —</strong>
+									The bivariate layer was dissolved by pollution class, producing at most 5 features. Zonal statistics 
+									(sum) of the unquantized population layer were then recomputed on this dissolved layer. The resulting 
+									values per pollution class were visualized as a pie chart using DataPlotly, showing the percentage
+									of the Croatian population exposed to each pollution concentration level.
+								</li>
+							</ol>
+
+							<p style="text-align: left; margin-top: 1rem;"><strong>Results</strong></p>
+							<p style="text-align: left; margin-top: 0rem;">The following output files are produced for each pollutant (NO₂, PM2.5, PM10).</p>
+							<table class="results-table">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>File</th>
+										<th>Step</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td><code>croatia_&lt;pollutant&gt;_2023_bivariate.gpkg</code></td>
+										<td>7</td>
+										<td class="table-line">Vector layer with zonal statistics containing population class (median), pollution class (max) and bivariate classification attributes per administrative zone</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Bivariate map & legend</td>
+										<td>7</td>
+										<td class="table-line">Interactive bivariate map showing the spatial relationship between population density and pollution levels, implemented directly in the website</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td><code>croatia_&lt;pollutant&gt;_2023_chart.gpkg</code></td>
+										<td>8</td>
+										<td class="table-line">Dissolved vector layer (max 5 features) with population sum and pollution class per zone, used as input for the pie chart</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Pie chart</td>
+										<td>8</td>
+										<td class="table-line">Chart showing the percentage of Croatian population exposed to each pollution concentration level, implemented directly in the website</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<p style="text-align: justify;">
+							<strong>Note:</strong> In the pie chart and the dissolved vector layer, an additional <code1>NULL</code1> class appears, 
+							representing administrative zones where population data is available but no pollution raster values could be assigned. 
+							This occurs due to the coarse spatial resolution of the pollutant concentration rasters: when clipping them to the Croatian 
+							national boundary, narrow coastal strips and highly indented coastline sections fall between raster pixels and are therefore 
+							left uncovered. As this affects an estimated population of approximately 11,832 inhabitants, equivalent to just 0.3% of the 
+							total Croatian population, no further processing was carried out, given the negligible impact on the overall results.
+							</p>
+
+
+						</div>
+					</li>
+
+				</ul>
+
+			</header>
+		</section>
+		
+			<!-- Button to next page -->
+			<div class="result-button-container">
+				<a href="results.html" class="button scrolly result-button">Show results</a>
+			</div>
+
+		<!-- Footer -->
+		<div id="footer" class="content dark style3">
+			<div class="source-code-container">
+			<h2 class="source-code-title">
+				See here our source code:
+			</h2>
+			
+			<ul class="icons">
+				<li>
+					<a href="https://github.com/susanna-colombo/GIS_project_group4" class="icon brands fa-github" target="_blank">
+						<span class="label">GitHub</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+			<div class="copyright">
+				<ul class="menu">
+					<li>&copy; Politecnico di Milano</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+
+		<!-- Script for the accordion -->
+		<script>
+			document.querySelectorAll('.accordion-trigger').forEach(function(btn) {
+				btn.addEventListener('click', function() {
+					var item = this.closest('.accordion-item');
+					var isOpen = item.classList.contains('is-open');
+
+					// Close all
+					document.querySelectorAll('.accordion-item.is-open').forEach(function(el) {
+						el.classList.remove('is-open');
+						el.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+					});
+
+					// Open clicked one (if it was closed)
+					if (!isOpen) {
+						item.classList.add('is-open');
+						btn.setAttribute('aria-expanded', 'true');
+					}
+				});
+			});
+		</script>
+
+	</body>
+</html>
