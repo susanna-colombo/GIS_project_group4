@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "vite --base=./",
-    "build-production": "vite build --base=/polimi-webgis-class-2026/",
+    "build-production": "vite build --base=/GIS_project_group4/",
     "build-local": "vite build",
     "preview": "vite preview --base=./"
   },
