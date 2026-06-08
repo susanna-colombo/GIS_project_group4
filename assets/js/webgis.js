@@ -422,7 +422,7 @@ async function updateLegend() {
             legendHTMLString +=
                 '<li>' +
                     '<li class="legend-layer-title">' + layerTitle + '</li>' +
-                    '<img src="../images/legend_bivariate_5x5.png" class="legend-img">' +
+                    '<img src="/GIS_project_group4/legend_bivariate_5x5.png" class="legend-img">' +
                 '</li>';
 
             continue;
