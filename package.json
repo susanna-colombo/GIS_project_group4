@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "vite --base=./",
-    "build-production": "vite build --base=/GIS_project_group4/",
+    "build-production": "vite build --base=/gisproject_fix/",
     "build-local": "vite build",
     "preview": "vite preview --base=./"
   },
