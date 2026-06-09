@@ -4,6 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   build: {
+    outDir: 'docs',
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
